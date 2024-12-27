@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Ability_Pickup_01" ID="{EDCE171A-B6BD-4B32-B3FF-FB1ECE0DCEFB}" ShortID="801504734">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button_Hold" ID="{98266B55-4F10-46D4-B2F9-BD2E10F87F0A}">
+							<Language>SFX</Language>
+							<AudioFile>Button_Hold.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="88874056"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button_Hold" ID="{98266B55-4F10-46D4-B2F9-BD2E10F87F0A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "1330631287",
+    "Type": "Event",
+    "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
+    "Language": "SFX",
+    "Hash": "{BB973CBE-754E-7AD9-8816-BF8D5F8421A0}",
+    "ObjectPath": "Play_Ability_Pickup_01",
+    "ShortName": "Play_Ability_Pickup_01",
+    "Path": "Event/Play_Ability_Pickup_01.bnk",
+    "Media": [
+     {
+      "Id": "88874056",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Button_Hold.wav",
+      "Path": "Media/88874056.wem",
+      "CachePath": "13/{13A18BB7-F8FC-5A2B-E19D-1F0E005BFDD5}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1330631287",
+      "Name": "Play_Ability_Pickup_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Ability_Pickup_01",
+      "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.60735416",
+      "DurationMax": "0.60735416",
+      "MediaRefs": [
+       {
+        "Id": "88874056"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{33ADE828-7FA0-6AA2-E386-C4699CCC7583}"
+ }
+}

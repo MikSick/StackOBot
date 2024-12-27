@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{94AB8FEA-71F1-4B9A-A0BE-D9375F3A61B8}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{94AB8FEA-71F1-4B9A-A0BE-D9375F3A61B8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Ability_Pickup_01" ID="{039539BC-A74F-49F0-865E-8D214394B9E7}">
+					<ChildrenList>
+						<Action Name="" ID="{6665329D-3165-48F2-9714-0A9AA1E06737}" ShortID="188036949">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ability_Pickup_01" ID="{EDCE171A-B6BD-4B32-B3FF-FB1ECE0DCEFB}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
