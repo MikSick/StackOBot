@@ -3,17 +3,21 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{94AB8FEA-71F1-4B9A-A0BE-D9375F3A61B8}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Ability_Pickup_01" ID="{039539BC-A74F-49F0-865E-8D214394B9E7}">
+				<Folder Name="New Virtual Folder" ID="{46F041AF-5E2A-41D3-8C6E-BBCDA2CB89A0}" ShortID="893432257">
 					<ChildrenList>
-						<Action Name="" ID="{6665329D-3165-48F2-9714-0A9AA1E06737}" ShortID="188036949">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Ability_Pickup_01" ID="{EDCE171A-B6BD-4B32-B3FF-FB1ECE0DCEFB}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_Ability_Pickup_01" ID="{039539BC-A74F-49F0-865E-8D214394B9E7}">
+							<ChildrenList>
+								<Action Name="" ID="{6665329D-3165-48F2-9714-0A9AA1E06737}" ShortID="188036949">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="New Random Container" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

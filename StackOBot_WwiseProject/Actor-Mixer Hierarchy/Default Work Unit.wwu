@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Ability_Pickup_01" ID="{EDCE171A-B6BD-4B32-B3FF-FB1ECE0DCEFB}" ShortID="801504734">
+				<RandomSequenceContainer Name="New Random Container" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" ShortID="228284350">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
@@ -13,18 +13,74 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Button_Hold" ID="{98266B55-4F10-46D4-B2F9-BD2E10F87F0A}">
-							<Language>SFX</Language>
-							<AudioFile>Button_Hold.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="88874056"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<Sound Name="Button_Press_01" ID="{11CF9087-95DE-4350-88C3-AEDA62BD9A51}" ShortID="857762124">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}">
+									<Language>SFX</Language>
+									<AudioFile>Button_Press_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="373568223"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Button_Press_02" ID="{95DD5F6B-4A22-4E88-BFFC-8C9E53341BFC}" ShortID="33116721">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}">
+									<Language>SFX</Language>
+									<AudioFile>Button_Press_02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="184594561"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Button_Press_03" ID="{7BE0945B-7ABD-4E70-9236-2A555A9898E0}" ShortID="252235456">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}">
+									<Language>SFX</Language>
+									<AudioFile>Button_Press_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="664327915"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Button_Hold" ID="{98266B55-4F10-46D4-B2F9-BD2E10F87F0A}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

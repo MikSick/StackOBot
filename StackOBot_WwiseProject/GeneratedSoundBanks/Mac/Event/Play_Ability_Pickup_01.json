@@ -10,39 +10,63 @@
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{BB973CBE-754E-7AD9-8816-BF8D5F8421A0}",
+    "Hash": "{95255C87-DD1D-6C8C-19F8-4C2D4776ADD2}",
     "ObjectPath": "Play_Ability_Pickup_01",
     "ShortName": "Play_Ability_Pickup_01",
     "Path": "Event/Play_Ability_Pickup_01.bnk",
     "Media": [
      {
-      "Id": "88874056",
+      "Id": "184594561",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Button_Hold.wav",
-      "Path": "Media/88874056.wem",
-      "CachePath": "13/{13A18BB7-F8FC-5A2B-E19D-1F0E005BFDD5}.wem"
+      "ShortName": "Button_Press_02.wav",
+      "Path": "Media/184594561.wem",
+      "CachePath": "5D/{5D7652F8-0EF9-BDB7-DB3E-A2BDFE3F935B}.wem"
+     },
+     {
+      "Id": "373568223",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Button_Press_01.wav",
+      "Path": "Media/373568223.wem",
+      "CachePath": "02/{023E3D14-9D9D-B5B3-0355-369EB2AD1ED2}.wem"
+     },
+     {
+      "Id": "664327915",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Button_Press_03.wav",
+      "Path": "Media/664327915.wem",
+      "CachePath": "CE/{CE71C2E8-40D3-2D51-9B06-5AFD975C6BBE}.wem"
      }
     ],
     "Events": [
      {
       "Id": "1330631287",
       "Name": "Play_Ability_Pickup_01",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Ability_Pickup_01",
+      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Ability_Pickup_01",
       "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
       "DurationType": "OneShot",
-      "DurationMin": "0.60735416",
-      "DurationMax": "0.60735416",
+      "DurationMin": "0.622375",
+      "DurationMax": "0.6856667",
       "MediaRefs": [
        {
-        "Id": "88874056"
+        "Id": "184594561"
+       },
+       {
+        "Id": "373568223"
+       },
+       {
+        "Id": "664327915"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{33ADE828-7FA0-6AA2-E386-C4699CCC7583}"
+  "FileHash": "{CB87FC7E-1644-187F-003A-543FCE6B1A65}"
  }
 }
