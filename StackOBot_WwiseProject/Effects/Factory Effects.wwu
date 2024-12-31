@@ -1389,6 +1389,18 @@
 										<Property Name="RoomSize" Type="Real32" Value="20"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<PropertyList>
+										<Property Name="Density" Type="Real32" Value="15"/>
+										<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+										<Property Name="ERPattern" Type="int32" Value="8"/>
+										<Property Name="EnableEarlyReflections" Type="bool" Value="False"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-47"/>
+										<Property Name="RoomShape" Type="Real32" Value="85"/>
+										<Property Name="RoomSize" Type="Real32" Value="100"/>
+										<Property Name="StereoWidth" Type="Real32" Value="0"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Huge Spaces" ID="{BA977855-2013-4BEC-9DA1-14012C02AEB5}" ShortID="987290544">

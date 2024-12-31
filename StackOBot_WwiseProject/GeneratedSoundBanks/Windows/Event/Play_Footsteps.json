@@ -10,84 +10,87 @@
     "Type": "Event",
     "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{88757A16-8802-8E74-3127-707D476E1606}",
+    "Hash": "{7CFA9C39-278E-2ECC-4D1F-6375AD6629EF}",
     "ObjectPath": "Play_Footsteps",
     "ShortName": "Play_Footsteps",
     "Path": "Event/Play_Footsteps.bnk",
     "Media": [
      {
-      "Id": "187344610",
+      "Id": "127986081",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_03.wav",
-      "Path": "Media/187344610.wem",
-      "CachePath": "02/{02041FCA-C4BA-4AEA-13E2-538B88254C1C}.wem"
+      "ShortName": "Footsteps_07.wav",
+      "Path": "Media/127986081.wem",
+      "CachePath": "46/{46A128A8-B9D8-42FA-1286-13654CA72156}.wem"
      },
      {
-      "Id": "420295086",
+      "Id": "357705262",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_09.wav",
-      "Path": "Media/420295086.wem",
-      "CachePath": "51/{5123A217-8FEB-4A91-CCEC-05FC977F79AB}.wem"
+      "ShortName": "Footsteps_02.wav",
+      "Path": "Media/357705262.wem",
+      "CachePath": "07/{078D85EE-F6C4-D15B-F0A9-B3A0AE0FFF8B}.wem"
      },
      {
-      "Id": "424144136",
+      "Id": "464355393",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_08.wav",
-      "Path": "Media/424144136.wem",
-      "CachePath": "0B/{0B562D51-6FF8-F109-FA54-BB534A9B3D25}.wem"
+      "ShortName": "Footsteps_01.wav",
+      "Path": "Media/464355393.wem",
+      "CachePath": "1F/{1F6A5651-1737-72C2-C417-D84A33597031}.wem"
      },
      {
-      "Id": "456951973",
+      "Id": "562553838",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_07.wav",
-      "Path": "Media/456951973.wem",
-      "CachePath": "23/{230D6352-301F-4BA5-E291-C8F7752744B8}.wem"
+      "ShortName": "Footsteps_04.wav",
+      "Path": "Media/562553838.wem",
+      "CachePath": "E6/{E6A7C40B-ACAB-46D3-FD81-7B424436C4DB}.wem"
      },
      {
-      "Id": "628306271",
+      "Id": "726171840",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_04.wav",
-      "Path": "Media/628306271.wem",
-      "CachePath": "94/{94F70448-3C6E-97CF-4A18-46E240965639}.wem"
+      "ShortName": "Footsteps_03.wav",
+      "Path": "Media/726171840.wem",
+      "CachePath": "D0/{D085F8B3-668C-8C28-3F1D-A038FB01C4D1}.wem"
      },
      {
-      "Id": "832493373",
+      "Id": "748953917",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_06.wav",
-      "Path": "Media/832493373.wem",
-      "CachePath": "20/{20B33530-62C2-F10C-7DFB-5B7AC1E732B8}.wem"
+      "ShortName": "Footsteps_05.wav",
+      "Path": "Media/748953917.wem",
+      "CachePath": "52/{52D42356-1C79-6ADA-81D4-D6A9A0A7D756}.wem"
      },
      {
-      "Id": "847674510",
+      "Id": "1029832407",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_05.wav",
-      "Path": "Media/847674510.wem",
-      "CachePath": "51/{514D9B4E-F7E6-5CED-2A67-69CB3ED38E5D}.wem"
-     },
-     {
-      "Id": "1035175689",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Hero_Footsteps_Run_Stone_10.wav",
-      "Path": "Media/1035175689.wem",
-      "CachePath": "B4/{B4A254AD-BF76-3C4B-125D-445884FE019D}.wem"
+      "ShortName": "Footsteps_06.wav",
+      "Path": "Media/1029832407.wem",
+      "CachePath": "93/{93A98EA2-4360-770D-5C1C-2C182CB48C84}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1259256166",
+       "Name": "New_RoomVerb",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Cathedrals\\New_RoomVerb",
+       "GUID": "{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "3854155799",
@@ -95,38 +98,42 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Footsteps",
       "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
       "DurationType": "OneShot",
-      "DurationMin": "1.35575",
-      "DurationMax": "1.35575",
+      "DurationMin": "0.230375",
+      "DurationMax": "0.30514583",
       "MediaRefs": [
        {
-        "Id": "187344610"
+        "Id": "127986081"
        },
        {
-        "Id": "420295086"
+        "Id": "357705262"
        },
        {
-        "Id": "424144136"
+        "Id": "464355393"
        },
        {
-        "Id": "456951973"
+        "Id": "562553838"
        },
        {
-        "Id": "628306271"
+        "Id": "726171840"
        },
        {
-        "Id": "832493373"
+        "Id": "748953917"
        },
        {
-        "Id": "847674510"
-       },
-       {
-        "Id": "1035175689"
+        "Id": "1029832407"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1259256166"
+        }
+       ]
+      }
      }
     ]
    }
   ],
-  "FileHash": "{801919B1-D5D2-D729-10E6-C7D8EBCAD7E0}"
+  "FileHash": "{F68A24EE-C89D-49CB-4F20-3D6C7F159F14}"
  }
 }
