@@ -10,7 +10,7 @@
 								<Action Name="" ID="{6665329D-3165-48F2-9714-0A9AA1E06737}" ShortID="188036949">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="New Random Container" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+											<ObjectRef Name="Button" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -18,6 +18,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Footsteps" ID="{967E2799-FA00-47AA-826B-E66AD47CDF78}">
+					<ChildrenList>
+						<Action Name="" ID="{BA1EACB9-8376-407B-8AF9-4647E77FB99A}" ShortID="37603840">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

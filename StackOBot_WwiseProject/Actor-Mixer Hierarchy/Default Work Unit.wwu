@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}" PersistMode="Standalone">
 			<ChildrenList>
-				<RandomSequenceContainer Name="New Random Container" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" ShortID="228284350">
+				<RandomSequenceContainer Name="Button" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" ShortID="228284350">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
@@ -77,6 +77,197 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" ShortID="9597400">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Hero_Footsteps_Run_Stone_03" ID="{C9B979FB-E242-461F-8992-302EF1C6F189}" ShortID="728679914">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_03" ID="{475303C5-9A7D-4101-A59E-6427F44FC11C}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="187344610"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_03" ID="{475303C5-9A7D-4101-A59E-6427F44FC11C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_04" ID="{66F3F237-E6DB-452D-961C-4233C387D8F5}" ShortID="892798502">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_04" ID="{B65B507D-C1CC-4E68-8221-C0B13A948FF5}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_04.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="628306271"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_04" ID="{B65B507D-C1CC-4E68-8221-C0B13A948FF5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_05" ID="{6C66B2DE-22ED-4F72-BDF6-D3A2D8177210}" ShortID="681394554">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_05" ID="{370F9566-B0FD-4240-B8E2-3EB911FCC92A}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="847674510"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_05" ID="{370F9566-B0FD-4240-B8E2-3EB911FCC92A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_06" ID="{66981394-2A5C-4BFA-AB75-69757E5A2892}" ShortID="720359324">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_06" ID="{D538DFE2-8C2C-4E5C-A1E4-448451E611D5}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_06.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="832493373"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_06" ID="{D538DFE2-8C2C-4E5C-A1E4-448451E611D5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_07" ID="{F31EE0FA-0DF6-49D1-852C-665490125AAF}" ShortID="748084116">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_07" ID="{566D94CB-80F8-42E5-A933-C0E45079A717}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_07.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="456951973"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_07" ID="{566D94CB-80F8-42E5-A933-C0E45079A717}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_08" ID="{D31C3A00-DE86-4759-BA3C-9DD56B534223}" ShortID="853379128">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_08" ID="{DE1581AD-6029-4D0C-9C5B-BC633B2930C8}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_08.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="424144136"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_08" ID="{DE1581AD-6029-4D0C-9C5B-BC633B2930C8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_09" ID="{388B40BC-62CF-47EA-A91D-833532AA4C7A}" ShortID="460125374">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_09" ID="{163A1870-F5B6-4FD2-A470-3B5C1924042C}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_09.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="420295086"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_09" ID="{163A1870-F5B6-4FD2-A470-3B5C1924042C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hero_Footsteps_Run_Stone_10" ID="{0E81F861-8172-4CAE-B3C6-0C78A451AA5C}" ShortID="744636615">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hero_Footsteps_Run_Stone_10" ID="{A484889A-9C5B-484D-9F88-B6CA34DB36A3}">
+									<Language>SFX</Language>
+									<AudioFile>Hero_Footsteps_Run_Stone_10.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1035175689"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hero_Footsteps_Run_Stone_10" ID="{A484889A-9C5B-484D-9F88-B6CA34DB36A3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

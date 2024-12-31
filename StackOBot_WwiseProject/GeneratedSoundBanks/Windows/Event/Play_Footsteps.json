@@ -1,0 +1,132 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3854155799",
+    "Type": "Event",
+    "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
+    "Language": "SFX",
+    "Hash": "{88757A16-8802-8E74-3127-707D476E1606}",
+    "ObjectPath": "Play_Footsteps",
+    "ShortName": "Play_Footsteps",
+    "Path": "Event/Play_Footsteps.bnk",
+    "Media": [
+     {
+      "Id": "187344610",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_03.wav",
+      "Path": "Media/187344610.wem",
+      "CachePath": "02/{02041FCA-C4BA-4AEA-13E2-538B88254C1C}.wem"
+     },
+     {
+      "Id": "420295086",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_09.wav",
+      "Path": "Media/420295086.wem",
+      "CachePath": "51/{5123A217-8FEB-4A91-CCEC-05FC977F79AB}.wem"
+     },
+     {
+      "Id": "424144136",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_08.wav",
+      "Path": "Media/424144136.wem",
+      "CachePath": "0B/{0B562D51-6FF8-F109-FA54-BB534A9B3D25}.wem"
+     },
+     {
+      "Id": "456951973",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_07.wav",
+      "Path": "Media/456951973.wem",
+      "CachePath": "23/{230D6352-301F-4BA5-E291-C8F7752744B8}.wem"
+     },
+     {
+      "Id": "628306271",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_04.wav",
+      "Path": "Media/628306271.wem",
+      "CachePath": "94/{94F70448-3C6E-97CF-4A18-46E240965639}.wem"
+     },
+     {
+      "Id": "832493373",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_06.wav",
+      "Path": "Media/832493373.wem",
+      "CachePath": "20/{20B33530-62C2-F10C-7DFB-5B7AC1E732B8}.wem"
+     },
+     {
+      "Id": "847674510",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_05.wav",
+      "Path": "Media/847674510.wem",
+      "CachePath": "51/{514D9B4E-F7E6-5CED-2A67-69CB3ED38E5D}.wem"
+     },
+     {
+      "Id": "1035175689",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Hero_Footsteps_Run_Stone_10.wav",
+      "Path": "Media/1035175689.wem",
+      "CachePath": "B4/{B4A254AD-BF76-3C4B-125D-445884FE019D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3854155799",
+      "Name": "Play_Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Footsteps",
+      "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.35575",
+      "DurationMax": "1.35575",
+      "MediaRefs": [
+       {
+        "Id": "187344610"
+       },
+       {
+        "Id": "420295086"
+       },
+       {
+        "Id": "424144136"
+       },
+       {
+        "Id": "456951973"
+       },
+       {
+        "Id": "628306271"
+       },
+       {
+        "Id": "832493373"
+       },
+       {
+        "Id": "847674510"
+       },
+       {
+        "Id": "1035175689"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{801919B1-D5D2-D729-10E6-C7D8EBCAD7E0}"
+ }
+}
