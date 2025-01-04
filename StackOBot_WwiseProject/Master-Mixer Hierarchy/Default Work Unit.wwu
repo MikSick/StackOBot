@@ -9,6 +9,17 @@
 							<ObjectRef Name="System" ID="{2E55912D-B405-4AA8-9DE2-77D18DDABE65}" WorkUnitID="{92F266AC-6318-4DF0-B27D-E4E6C2C15581}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Ambisonic" ID="{25B3B6C8-326A-4C0C-A0DE-B441F3F7FE63}">
+							<PropertyList>
+								<Property Name="BusChannelConfig" Type="int32">
+									<ValueList>
+										<Value>516</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>
