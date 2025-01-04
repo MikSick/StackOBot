@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{95255C87-DD1D-6C8C-19F8-4C2D4776ADD2}",
+    "Hash": "{4E040D43-FFAD-AF4D-50EF-F97AEAF75096}",
     "ObjectPath": "Play_Ability_Pickup_01",
     "ShortName": "Play_Ability_Pickup_01",
     "Path": "Event/Play_Ability_Pickup_01.bnk",
@@ -43,6 +43,18 @@
       "CachePath": "CE/{CE71C2E8-40D3-2D51-9B06-5AFD975C6BBE}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1259256166",
+       "Name": "New_RoomVerb",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Cathedrals\\New_RoomVerb",
+       "GUID": "{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "1330631287",
@@ -62,11 +74,18 @@
        {
         "Id": "664327915"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1259256166"
+        }
+       ]
+      }
      }
     ]
    }
   ],
-  "FileHash": "{CB87FC7E-1644-187F-003A-543FCE6B1A65}"
+  "FileHash": "{9478D7E5-8170-B8C7-5B15-884C544AC6D2}"
  }
 }

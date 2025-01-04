@@ -29,6 +29,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_New_Sound_SFX" ID="{15049214-A98A-4303-80C6-5C6418885C4C}">
+					<ChildrenList>
+						<Action Name="" ID="{88DD5FA2-96F7-464C-B814-AB11EE464F28}" ShortID="884866503">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience" ID="{F285E7F5-CB7C-43CF-9981-452D932C59E2}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

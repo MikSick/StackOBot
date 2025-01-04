@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	431205792	Play_New_Sound_SFX			\Default Work Unit\Play_New_Sound_SFX	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	933539871	Ambience	E:\Ue5\StackOBot\StackOBot_WwiseProject\.cache\6F\{6F21FAD2-EB10-C6C6-A7D9-C7851E322C4A}.wem	933539871.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambience	
+

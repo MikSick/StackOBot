@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "431205792",
+    "Type": "Event",
+    "GUID": "{15049214-A98A-4303-80C6-5C6418885C4C}",
+    "Language": "SFX",
+    "Hash": "{AE4167C0-9D79-9C73-9818-1B26EFBB80BF}",
+    "ObjectPath": "Play_New_Sound_SFX",
+    "ShortName": "Play_New_Sound_SFX",
+    "Path": "Event/Play_New_Sound_SFX.bnk",
+    "Media": [
+     {
+      "Id": "933539871",
+      "Language": "SFX",
+      "Streaming": "true",
+      "Location": "Loose",
+      "ShortName": "Ambince.wav",
+      "Path": "Media/933539871.wem",
+      "CachePath": "6F/{6F21FAD2-EB10-C6C6-A7D9-C7851E322C4A}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "431205792",
+      "Name": "Play_New_Sound_SFX",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_New_Sound_SFX",
+      "GUID": "{15049214-A98A-4303-80C6-5C6418885C4C}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "933539871"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0DAE2CF9-0126-4D7A-0DFD-BF432B194F93}"
+ }
+}
