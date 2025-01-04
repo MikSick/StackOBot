@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{15049214-A98A-4303-80C6-5C6418885C4C}",
     "Language": "SFX",
-    "Hash": "{AE4167C0-9D79-9C73-9818-1B26EFBB80BF}",
+    "Hash": "{4C9A05E3-C505-16AF-17B8-F6A94C435F66}",
     "ObjectPath": "Play_New_Sound_SFX",
     "ShortName": "Play_New_Sound_SFX",
     "Path": "Event/Play_New_Sound_SFX.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Ambince.wav",
       "Path": "Media/933539871.wem",
-      "CachePath": "6F/{6F21FAD2-EB10-C6C6-A7D9-C7851E322C4A}.wem"
+      "CachePath": "1E/{1E36AB3F-C091-02AA-C56F-C6D4156C4440}.wem"
      }
     ],
     "Events": [
@@ -41,6 +41,6 @@
     ]
    }
   ],
-  "FileHash": "{0DAE2CF9-0126-4D7A-0DFD-BF432B194F93}"
+  "FileHash": "{36A33C79-1388-6BEC-0E6B-6F93DA823A6C}"
  }
 }

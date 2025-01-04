@@ -287,12 +287,15 @@
 				</RandomSequenceContainer>
 				<Sound Name="Ambience" ID="{F285E7F5-CB7C-43CF-9981-452D932C59E2}" ShortID="104744455">
 					<PropertyList>
-						<Property Name="3DPosition" Type="int16" Value="2"/>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="IsStreamingEnabled" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-27</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -308,7 +311,6 @@
 						<AudioFileSource Name="Ambince" ID="{EA77404C-6953-4FFE-B9CF-2BBA1DB5FF79}">
 							<PropertyList>
 								<Property Name="ChannelConfigOverride" Type="int64" Value="516"/>
-								<Property Name="FadeInDuration" Type="Real64" Value="2.27624646685926"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 							</PropertyList>
 							<Language>SFX</Language>

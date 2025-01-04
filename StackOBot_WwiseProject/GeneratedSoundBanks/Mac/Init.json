@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{F7471477-DA0B-CD97-EB57-4B4C67B0C32F}",
+    "Hash": "{B9CF448F-17B6-2863-ED3B-F19F947F3188}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -36,6 +36,12 @@
     },
     "Busses": [
      {
+      "Id": "1034652824",
+      "Name": "Ambisonic",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambisonic",
+      "GUID": "{25B3B6C8-326A-4C0C-A0DE-B441F3F7FE63}"
+     },
+     {
       "Id": "3803692087",
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
@@ -44,6 +50,6 @@
     ]
    }
   ],
-  "FileHash": "{A984A992-9D5B-3D75-4556-9E54DD6F5EDC}"
+  "FileHash": "{F3F738BD-A802-BE09-5A74-C5049531EE22}"
  }
 }
