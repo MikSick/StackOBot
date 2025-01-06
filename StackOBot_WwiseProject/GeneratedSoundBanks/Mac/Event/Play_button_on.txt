@@ -1,5 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1330631287	Play_Ability_Pickup_01			\Default Work Unit\New Virtual Folder\Play_Ability_Pickup_01	
+	1183401442	Play_Button_on			\Default Work Unit\New Virtual Folder\Play_Button_on	
 
 Effect plug-ins	ID	Name	Type				Notes
 	1259256166	New_RoomVerb	Wwise RoomVerb			

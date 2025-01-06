@@ -1,19 +1,19 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Mac",
-  "BasePlatform": "Mac",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
   "SchemaVersion": "16",
   "SoundBankVersion": "154",
   "SoundBanks": [
    {
-    "Id": "1330631287",
+    "Id": "1183401442",
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{4E040D43-FFAD-AF4D-50EF-F97AEAF75096}",
-    "ObjectPath": "Play_Ability_Pickup_01",
-    "ShortName": "Play_Ability_Pickup_01",
-    "Path": "Event/Play_Ability_Pickup_01.bnk",
+    "Hash": "{83D232B0-C917-29B0-0DFD-5A87E9A147A1}",
+    "ObjectPath": "Play_Button_on",
+    "ShortName": "Play_Button_on",
+    "Path": "Event/Play_Button_on.bnk",
     "Media": [
      {
       "Id": "184594561",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Button_Press_02.wav",
       "Path": "Media/184594561.wem",
-      "CachePath": "5D/{5D7652F8-0EF9-BDB7-DB3E-A2BDFE3F935B}.wem"
+      "CachePath": "61/{618F7080-7DF6-E0DB-7714-61E1ACBBDC36}.wem"
      },
      {
       "Id": "373568223",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "Button_Press_01.wav",
       "Path": "Media/373568223.wem",
-      "CachePath": "02/{023E3D14-9D9D-B5B3-0355-369EB2AD1ED2}.wem"
+      "CachePath": "55/{551ED409-ACC2-35CB-EBA7-6653F70B6908}.wem"
      },
      {
       "Id": "664327915",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Button_Press_03.wav",
       "Path": "Media/664327915.wem",
-      "CachePath": "CE/{CE71C2E8-40D3-2D51-9B06-5AFD975C6BBE}.wem"
+      "CachePath": "BD/{BDD59E9C-FD2C-1C00-1C58-D7B324D37AF6}.wem"
      }
     ],
     "Plugins": {
@@ -57,10 +57,11 @@
     },
     "Events": [
      {
-      "Id": "1330631287",
-      "Name": "Play_Ability_Pickup_01",
-      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Ability_Pickup_01",
+      "Id": "1183401442",
+      "Name": "Play_Button_on",
+      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Button_on",
       "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
+      "MaxAttenuation": "3000",
       "DurationType": "OneShot",
       "DurationMin": "0.622375",
       "DurationMax": "0.6856667",
@@ -86,6 +87,6 @@
     ]
    }
   ],
-  "FileHash": "{9478D7E5-8170-B8C7-5B15-884C544AC6D2}"
+  "FileHash": "{BA206578-5026-EC93-F32A-60E64F32C110}"
  }
 }

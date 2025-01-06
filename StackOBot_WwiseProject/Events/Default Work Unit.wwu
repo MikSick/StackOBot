@@ -5,12 +5,33 @@
 			<ChildrenList>
 				<Folder Name="New Virtual Folder" ID="{46F041AF-5E2A-41D3-8C6E-BBCDA2CB89A0}" ShortID="893432257">
 					<ChildrenList>
-						<Event Name="Play_Ability_Pickup_01" ID="{039539BC-A74F-49F0-865E-8D214394B9E7}">
+						<Event Name="Play_Button_on" ID="{039539BC-A74F-49F0-865E-8D214394B9E7}">
 							<ChildrenList>
 								<Action Name="" ID="{6665329D-3165-48F2-9714-0A9AA1E06737}" ShortID="188036949">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Button" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CC580C78-E6A8-47BB-BB72-038A47119ED8}" ShortID="351247390">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Button_off" ID="{013E98A0-EB9F-4CB9-9932-4822087BE469}">
+							<ChildrenList>
+								<Action Name="" ID="{4EA04DBF-2E5B-47DF-8E35-29A84ABCB2D5}" ShortID="174059264">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Button_off" ID="{4262A42F-1C12-4C85-9EB1-18644CEF64DF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -29,12 +50,12 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_New_Sound_SFX" ID="{15049214-A98A-4303-80C6-5C6418885C4C}">
+				<Event Name="Ambience" ID="{15049214-A98A-4303-80C6-5C6418885C4C}">
 					<ChildrenList>
 						<Action Name="" ID="{88DD5FA2-96F7-464C-B814-AB11EE464F28}" ShortID="884866503">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Ambience" ID="{F285E7F5-CB7C-43CF-9981-452D932C59E2}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+									<ObjectRef Name="Ambince" ID="{5350A3D1-6A88-460C-A1A3-E13CFFAAEB16}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

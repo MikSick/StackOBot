@@ -1,19 +1,19 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Windows",
-  "BasePlatform": "Windows",
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
   "SchemaVersion": "16",
   "SoundBankVersion": "154",
   "SoundBanks": [
    {
-    "Id": "431205792",
+    "Id": "85412153",
     "Type": "Event",
     "GUID": "{15049214-A98A-4303-80C6-5C6418885C4C}",
     "Language": "SFX",
-    "Hash": "{4C9A05E3-C505-16AF-17B8-F6A94C435F66}",
-    "ObjectPath": "Play_New_Sound_SFX",
-    "ShortName": "Play_New_Sound_SFX",
-    "Path": "Event/Play_New_Sound_SFX.bnk",
+    "Hash": "{5AB9C118-CA3B-E908-DD08-1BD16A5F1D42}",
+    "ObjectPath": "Ambience",
+    "ShortName": "Ambience",
+    "Path": "Event/Ambience.bnk",
     "Media": [
      {
       "Id": "933539871",
@@ -22,15 +22,16 @@
       "Location": "Loose",
       "ShortName": "Ambince.wav",
       "Path": "Media/933539871.wem",
-      "CachePath": "1E/{1E36AB3F-C091-02AA-C56F-C6D4156C4440}.wem"
+      "CachePath": "76/{76E49DEC-122E-F47D-1394-DAFAC78B379F}.wem"
      }
     ],
     "Events": [
      {
-      "Id": "431205792",
-      "Name": "Play_New_Sound_SFX",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_New_Sound_SFX",
+      "Id": "85412153",
+      "Name": "Ambience",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ambience",
       "GUID": "{15049214-A98A-4303-80C6-5C6418885C4C}",
+      "MaxAttenuation": "100",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -41,6 +42,6 @@
     ]
    }
   ],
-  "FileHash": "{69991D27-C64C-5E89-9D3B-92A7B1504735}"
+  "FileHash": "{ED209759-5611-0929-03DF-5F38CA46700A}"
  }
 }

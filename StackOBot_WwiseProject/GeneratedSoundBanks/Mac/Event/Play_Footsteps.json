@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{7CFA9C39-278E-2ECC-4D1F-6375AD6629EF}",
+    "Hash": "{3AD2E225-F6A6-B8DB-BBB7-BD8158E7818E}",
     "ObjectPath": "Play_Footsteps",
     "ShortName": "Play_Footsteps",
     "Path": "Event/Play_Footsteps.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_07.wav",
       "Path": "Media/127986081.wem",
-      "CachePath": "46/{46A128A8-B9D8-42FA-1286-13654CA72156}.wem"
+      "CachePath": "8D/{8DD9EFC9-57F4-18C5-0263-E93EADB97A9A}.wem"
      },
      {
       "Id": "357705262",
@@ -31,7 +31,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_02.wav",
       "Path": "Media/357705262.wem",
-      "CachePath": "07/{078D85EE-F6C4-D15B-F0A9-B3A0AE0FFF8B}.wem"
+      "CachePath": "9B/{9BC01AEB-E4E0-3599-74EB-4F436D1E6D4D}.wem"
      },
      {
       "Id": "464355393",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_01.wav",
       "Path": "Media/464355393.wem",
-      "CachePath": "1F/{1F6A5651-1737-72C2-C417-D84A33597031}.wem"
+      "CachePath": "DD/{DD0A3E08-8827-ABA0-95A7-40E0ACCFAAD3}.wem"
      },
      {
       "Id": "562553838",
@@ -49,7 +49,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_04.wav",
       "Path": "Media/562553838.wem",
-      "CachePath": "E6/{E6A7C40B-ACAB-46D3-FD81-7B424436C4DB}.wem"
+      "CachePath": "A9/{A95F2B6E-A575-31FC-3D7C-87AF94D099BE}.wem"
      },
      {
       "Id": "726171840",
@@ -58,7 +58,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_03.wav",
       "Path": "Media/726171840.wem",
-      "CachePath": "D0/{D085F8B3-668C-8C28-3F1D-A038FB01C4D1}.wem"
+      "CachePath": "0D/{0D460CCD-6121-9DE1-AA5B-A8974D89B2AC}.wem"
      },
      {
       "Id": "748953917",
@@ -67,7 +67,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_05.wav",
       "Path": "Media/748953917.wem",
-      "CachePath": "52/{52D42356-1C79-6ADA-81D4-D6A9A0A7D756}.wem"
+      "CachePath": "48/{4819A37E-5D71-1428-8327-6D289A5DEA69}.wem"
      },
      {
       "Id": "1029832407",
@@ -76,7 +76,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_06.wav",
       "Path": "Media/1029832407.wem",
-      "CachePath": "93/{93A98EA2-4360-770D-5C1C-2C182CB48C84}.wem"
+      "CachePath": "72/{72F902DE-5116-5D95-F8E6-2148915B4F9F}.wem"
      }
     ],
     "Plugins": {
@@ -134,6 +134,6 @@
     ]
    }
   ],
-  "FileHash": "{C4A23FD8-B2F3-E6E9-D912-56B3121E8ECA}"
+  "FileHash": "{E2E06F04-4FDD-A324-C2A3-79CDBB050746}"
  }
 }

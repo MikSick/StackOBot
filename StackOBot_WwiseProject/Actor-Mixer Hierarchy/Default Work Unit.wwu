@@ -3,105 +3,12 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}" PersistMode="Standalone">
 			<ChildrenList>
-				<RandomSequenceContainer Name="Button" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" ShortID="228284350">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="Button_Press_01" ID="{11CF9087-95DE-4350-88C3-AEDA62BD9A51}" ShortID="857762124">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}">
-									<Language>SFX</Language>
-									<AudioFile>Button_Press_01.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="373568223"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Button_Press_02" ID="{95DD5F6B-4A22-4E88-BFFC-8C9E53341BFC}" ShortID="33116721">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}">
-									<Language>SFX</Language>
-									<AudioFile>Button_Press_02.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="184594561"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Button_Press_03" ID="{7BE0945B-7ABD-4E70-9236-2A555A9898E0}" ShortID="252235456">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}">
-									<Language>SFX</Language>
-									<AudioFile>Button_Press_03.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="664327915"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="Effects">
-							<Reference>
-								<Local>
-									<EffectSlot Name="" ID="{928F89CB-68E1-4D7F-8AAD-1002F6943433}" ShortID="724357042">
-										<ReferenceList>
-											<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-												<ObjectRef Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-											</Reference>
-										</ReferenceList>
-									</EffectSlot>
-								</Local>
-							</Reference>
-						</ObjectList>
-					</ObjectLists>
-				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" ShortID="9597400">
 					<PropertyList>
 						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-8</Value>
+								<Value>-9</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -285,21 +192,14 @@
 						</ObjectList>
 					</ObjectLists>
 				</RandomSequenceContainer>
-				<Sound Name="Ambience" ID="{F285E7F5-CB7C-43CF-9981-452D932C59E2}" ShortID="104744455">
+				<BlendContainer Name="Ambince" ID="{5350A3D1-6A88-460C-A1A3-E13CFFAAEB16}" ShortID="655099802">
 					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="IsStreamingEnabled" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-27</Value>
-							</ValueList>
-						</Property>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Ambience" ID="{527D687C-59FB-4071-855E-7EDD76E99FE5}" WorkUnitID="{763EA50E-FECE-4C59-A2D7-420336407407}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
 						</Reference>
@@ -308,25 +208,258 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Ambince" ID="{EA77404C-6953-4FFE-B9CF-2BBA1DB5FF79}">
+						<Sound Name="Ambience" ID="{F285E7F5-CB7C-43CF-9981-452D932C59E2}" ShortID="104744455">
 							<PropertyList>
-								<Property Name="ChannelConfigOverride" Type="int64" Value="516"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="IsStreamingEnabled" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-19</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Ambince.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="933539871"/>
-							</MediaIDList>
-						</AudioFileSource>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Ambince" ID="{EA77404C-6953-4FFE-B9CF-2BBA1DB5FF79}">
+									<PropertyList>
+										<Property Name="ChannelConfigOverride" Type="int64" Value="516"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Ambince.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="933539871"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{C3A94462-AC20-4149-89D6-AB68FA8FE15B}"/>
+								<Position Name="" ID="{322A384E-EE96-43D3-B277-8A3C3255115E}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Ambince" ID="{EA77404C-6953-4FFE-B9CF-2BBA1DB5FF79}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UT_Ambisonic_Test" ID="{0BFA7FB4-CDAE-4557-8E31-E734EA2CFD2A}" ShortID="139869609">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UT_Ambisonic_Test" ID="{0D68A9F1-6FF0-4AB2-8E93-72089F53354A}">
+									<PropertyList>
+										<Property Name="ChannelConfigOverride" Type="int64" Value="516"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UT_Ambisonic_Test.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="309509621"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UT_Ambisonic_Test" ID="{0D68A9F1-6FF0-4AB2-8E93-72089F53354A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<PositioningInfo>
-						<Position Name="" ID="{322A384E-EE96-43D3-B277-8A3C3255115E}"/>
+						<Position Name="" ID="{8672A91B-62AE-4E6E-B593-FF9953ABF065}"/>
 					</PositioningInfo>
-					<ActiveSourceList>
-						<ActiveSource Name="Ambince" ID="{EA77404C-6953-4FFE-B9CF-2BBA1DB5FF79}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</BlendContainer>
+				<ActorMixer Name="Buttons" ID="{D24F606D-613D-411F-B0B6-D9E71090E4F5}" ShortID="183673792">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Buttons" ID="{51A57CE3-CEC3-4F3E-934D-842B99EBD1F4}" WorkUnitID="{763EA50E-FECE-4C59-A2D7-420336407407}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Button" ID="{FD43D5AC-67C4-42EF-8576-495C60E89DAF}" ShortID="228284350">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Button_Press_01" ID="{11CF9087-95DE-4350-88C3-AEDA62BD9A51}" ShortID="857762124">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}">
+											<Language>SFX</Language>
+											<AudioFile>Button_Press_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="373568223"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Button_Press_01" ID="{652D448C-D4A3-47CF-8249-8598884D74C9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Button_Press_02" ID="{95DD5F6B-4A22-4E88-BFFC-8C9E53341BFC}" ShortID="33116721">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}">
+											<Language>SFX</Language>
+											<AudioFile>Button_Press_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="184594561"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Button_Press_02" ID="{36971691-F8C7-41FF-92B6-C5D04EB6B148}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Button_Press_03" ID="{7BE0945B-7ABD-4E70-9236-2A555A9898E0}" ShortID="252235456">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}">
+											<Language>SFX</Language>
+											<AudioFile>Button_Press_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="664327915"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Button_Press_03" ID="{3495058A-B496-400E-AB7C-8A16F8E8886C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{928F89CB-68E1-4D7F-8AAD-1002F6943433}" ShortID="724357042">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="Button_off" ID="{4262A42F-1C12-4C85-9EB1-18644CEF64DF}" ShortID="285431381">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Button off" ID="{857103A3-AB03-40C2-AB2D-3CAF45908BAC}">
+									<Language>SFX</Language>
+									<AudioFile>Button off.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="171948593"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{4EF0EDED-138E-4A83-9FA4-D433D0997570}" ShortID="15876277">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Button off" ID="{857103A3-AB03-40C2-AB2D-3CAF45908BAC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{0CA0A41D-60A1-4FC1-8EC8-C1812436988C}" ShortID="338854083">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+												<ObjectRef Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
