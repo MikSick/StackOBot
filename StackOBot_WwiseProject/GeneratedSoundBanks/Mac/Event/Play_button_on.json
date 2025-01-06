@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{83D232B0-C917-29B0-0DFD-5A87E9A147A1}",
+    "Hash": "{C190A400-AFED-85AF-B617-F4DD76F9610D}",
     "ObjectPath": "Play_Button_on",
     "ShortName": "Play_Button_on",
     "Path": "Event/Play_Button_on.bnk",
@@ -87,6 +87,6 @@
     ]
    }
   ],
-  "FileHash": "{2E63A033-9E2E-B942-8267-A7B0880490AC}"
+  "FileHash": "{54BD9D70-683C-94F7-DD3A-3EBC820B2006}"
  }
 }

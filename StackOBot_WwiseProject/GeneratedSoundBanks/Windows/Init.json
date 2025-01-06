@@ -53,9 +53,31 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "4050929301",
+      "Name": "Materials",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Materials",
+      "GUID": "{C8F3BCA8-83F5-40B1-9488-BDE78E4E2C50}",
+      "Switches": [
+       {
+        "Id": "660835419",
+        "Name": "Plastic",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Plastic",
+        "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
+       },
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Stone",
+        "GUID": "{0849C533-D672-46A7-AA7C-6C6261A5B942}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{6C91B33B-9B79-FF49-9D5B-9630A9A09577}"
+  "FileHash": "{AF9664B4-28CA-4BBB-3CE8-8BE8A256A758}"
  }
 }

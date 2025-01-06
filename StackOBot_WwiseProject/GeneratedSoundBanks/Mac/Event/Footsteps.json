@@ -1,19 +1,19 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Windows",
-  "BasePlatform": "Windows",
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
   "SchemaVersion": "16",
   "SoundBankVersion": "154",
   "SoundBanks": [
    {
-    "Id": "4095283000",
+    "Id": "2385628198",
     "Type": "Event",
-    "GUID": "{013E98A0-EB9F-4CB9-9932-4822087BE469}",
+    "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{04B490A1-B89A-9341-9F03-FB9D38A86167}",
-    "ObjectPath": "Play_Button_off",
-    "ShortName": "Play_Button_off",
-    "Path": "Event/Play_Button_off.bnk",
+    "Hash": "{5BBF792E-0531-C7CF-1D51-5415E47C1923}",
+    "ObjectPath": "Footsteps",
+    "ShortName": "Footsteps",
+    "Path": "Event/Footsteps.bnk",
     "Media": [
      {
       "Id": "83154899",
@@ -135,10 +135,10 @@
     ],
     "Events": [
      {
-      "Id": "4095283000",
-      "Name": "Play_Button_off",
-      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Button_off",
-      "GUID": "{013E98A0-EB9F-4CB9-9932-4822087BE469}",
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Events\\Default Work Unit\\Footsteps",
+      "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
       "DurationType": "OneShot",
       "DurationMin": "0.17020833",
       "DurationMax": "0.30514583",
@@ -230,6 +230,6 @@
     ]
    }
   ],
-  "FileHash": "{4A23E7ED-0921-D24B-F297-D42194534F7B}"
+  "FileHash": "{608462DC-59C2-A3C0-F4F4-26C3CBD78A3F}"
  }
 }

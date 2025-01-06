@@ -1,5 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
-	4095283000	Play_Button_off			\Default Work Unit\New Virtual Folder\Play_Button_off	
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	4050929301	Materials			\Default Work Unit\Materials	

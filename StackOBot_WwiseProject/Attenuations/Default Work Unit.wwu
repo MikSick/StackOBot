@@ -102,6 +102,11 @@
 				</Attenuation>
 				<Attenuation Name="Buttons" ID="{51A57CE3-CEC3-4F3E-934D-842B99EBD1F4}" ShortID="320965392">
 					<PropertyList>
+						<Property Name="HeightSpreadEnable" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="RadiusMax" Type="Real64" Value="3000"/>
 					</PropertyList>
 					<CurveUsageInfoList>
@@ -123,8 +128,8 @@
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>923.96535</XPos>
-											<YPos>-3.7513</YPos>
+											<XPos>944.17709</XPos>
+											<YPos>-1.64923</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
@@ -160,13 +165,13 @@
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>612.01143</XPos>
-											<YPos>34</YPos>
+											<XPos>600.57196</XPos>
+											<YPos>30</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>903.71784</XPos>
-											<YPos>56</YPos>
+											<XPos>900.85797</XPos>
+											<YPos>48</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
@@ -203,7 +208,25 @@
 							</CurveUsageInfo>
 						</SpreadUsage>
 						<FocusUsage>
-							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+							<CurveUsageInfo Platform="Linked" CurveToUse="None">
+								<Curve Name="Focus" ID="{69944320-E8C4-4933-9268-AC1680C9BAA8}">
+									<PropertyList>
+										<Property Name="Flags" Type="int32" Value="1"/>
+									</PropertyList>
+									<PointList>
+										<Point>
+											<XPos>0</XPos>
+											<YPos>100</YPos>
+											<Flags>5</Flags>
+										</Point>
+										<Point>
+											<XPos>3000</XPos>
+											<YPos>0</YPos>
+											<Flags>37</Flags>
+										</Point>
+									</PointList>
+								</Curve>
+							</CurveUsageInfo>
 						</FocusUsage>
 						<ObstructionVolumeUsage>
 							<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>

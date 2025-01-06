@@ -20,7 +20,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+											<ObjectRef Name="Footsteps_Stone" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -31,7 +31,7 @@
 								<Action Name="" ID="{4EA04DBF-2E5B-47DF-8E35-29A84ABCB2D5}" ShortID="174059264">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Button_off" ID="{4262A42F-1C12-4C85-9EB1-18644CEF64DF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+											<ObjectRef Name="Materials" ID="{52641ADB-7E42-48CD-B24F-6F9A7A95B20B}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -39,12 +39,12 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_Footsteps" ID="{967E2799-FA00-47AA-826B-E66AD47CDF78}">
+				<Event Name="Footsteps" ID="{967E2799-FA00-47AA-826B-E66AD47CDF78}">
 					<ChildrenList>
-						<Action Name="" ID="{BA1EACB9-8376-407B-8AF9-4647E77FB99A}" ShortID="37603840">
+						<Action Name="" ID="{D25909AB-3ED1-417A-8CF1-60D1466E85EA}" ShortID="827230487">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Footsteps" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+									<ObjectRef Name="Materials" ID="{52641ADB-7E42-48CD-B24F-6F9A7A95B20B}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

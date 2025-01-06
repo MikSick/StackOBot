@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	3854155799	Play_Footsteps			\Default Work Unit\Play_Footsteps	
-
-Effect plug-ins	ID	Name	Type				Notes
-	1259256166	New_RoomVerb	Wwise RoomVerb			
-
