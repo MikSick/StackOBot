@@ -31,7 +31,7 @@
 								<Action Name="" ID="{4EA04DBF-2E5B-47DF-8E35-29A84ABCB2D5}" ShortID="174059264">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Materials" ID="{52641ADB-7E42-48CD-B24F-6F9A7A95B20B}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+											<ObjectRef Name="Button_off" ID="{4262A42F-1C12-4C85-9EB1-18644CEF64DF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
