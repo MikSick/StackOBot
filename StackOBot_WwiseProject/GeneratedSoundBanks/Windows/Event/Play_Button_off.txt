@@ -1,10 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	4095283000	Play_Button_off			\Default Work Unit\New Virtual Folder\Play_Button_off	
 
-Switch Group	ID	Name			Wwise Object Path	Notes
-	4050929301	Materials			\Default Work Unit\Materials	
-
-Switch	ID	Name	Switch Group			Notes
-	660835419	Plastic	Materials			
-	1216965916	Stone	Materials			
+Effect plug-ins	ID	Name	Type				Notes
+	1259256166	New_RoomVerb	Wwise RoomVerb			
 

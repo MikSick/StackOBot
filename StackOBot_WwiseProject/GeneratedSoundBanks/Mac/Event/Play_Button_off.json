@@ -10,226 +10,59 @@
     "Type": "Event",
     "GUID": "{013E98A0-EB9F-4CB9-9932-4822087BE469}",
     "Language": "SFX",
-    "Hash": "{04B490A1-B89A-9341-9F03-FB9D38A86167}",
+    "Hash": "{74D60DBA-7C22-889D-C430-71C07B0501F3}",
     "ObjectPath": "Play_Button_off",
     "ShortName": "Play_Button_off",
     "Path": "Event/Play_Button_off.bnk",
     "Media": [
      {
-      "Id": "83154899",
+      "Id": "171948593",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_01.wav",
-      "Path": "Media/83154899.wem",
-      "CachePath": "B7/{B7043AA4-D1E1-F0CD-0AD3-C9904CCB83F5}.wem"
-     },
-     {
-      "Id": "127986081",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_07.wav",
-      "Path": "Media/127986081.wem",
-      "CachePath": "8D/{8DD9EFC9-57F4-18C5-0263-E93EADB97A9A}.wem"
-     },
-     {
-      "Id": "211796984",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_06.wav",
-      "Path": "Media/211796984.wem",
-      "CachePath": "81/{815A655C-B3BD-9F04-7854-7BF72BA9B852}.wem"
-     },
-     {
-      "Id": "324151547",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_02.wav",
-      "Path": "Media/324151547.wem",
-      "CachePath": "BA/{BAC9A375-C459-A6CE-BE4C-D95C0F4F9EC6}.wem"
-     },
-     {
-      "Id": "353832452",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_04.wav",
-      "Path": "Media/353832452.wem",
-      "CachePath": "5A/{5A68AC32-9D86-F4C8-5F7B-22A292B3AB7D}.wem"
-     },
-     {
-      "Id": "357705262",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_02.wav",
-      "Path": "Media/357705262.wem",
-      "CachePath": "9B/{9BC01AEB-E4E0-3599-74EB-4F436D1E6D4D}.wem"
-     },
-     {
-      "Id": "464355393",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_01.wav",
-      "Path": "Media/464355393.wem",
-      "CachePath": "DD/{DD0A3E08-8827-ABA0-95A7-40E0ACCFAAD3}.wem"
-     },
-     {
-      "Id": "562553838",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_04.wav",
-      "Path": "Media/562553838.wem",
-      "CachePath": "A9/{A95F2B6E-A575-31FC-3D7C-87AF94D099BE}.wem"
-     },
-     {
-      "Id": "629868767",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_03.wav",
-      "Path": "Media/629868767.wem",
-      "CachePath": "F4/{F4C17D3C-CBDF-1C19-B92B-7274C95C0394}.wem"
-     },
-     {
-      "Id": "669138820",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_Plastic_05.wav",
-      "Path": "Media/669138820.wem",
-      "CachePath": "D6/{D60E2E60-1FEE-6244-797B-29C1CC4C48B2}.wem"
-     },
-     {
-      "Id": "726171840",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_03.wav",
-      "Path": "Media/726171840.wem",
-      "CachePath": "0D/{0D460CCD-6121-9DE1-AA5B-A8974D89B2AC}.wem"
-     },
-     {
-      "Id": "748953917",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_05.wav",
-      "Path": "Media/748953917.wem",
-      "CachePath": "48/{4819A37E-5D71-1428-8327-6D289A5DEA69}.wem"
-     },
-     {
-      "Id": "1029832407",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_06.wav",
-      "Path": "Media/1029832407.wem",
-      "CachePath": "72/{72F902DE-5116-5D95-F8E6-2148915B4F9F}.wem"
+      "ShortName": "Button off.wav",
+      "Path": "Media/171948593.wem",
+      "CachePath": "E5/{E55357F9-FD57-BA48-ED4E-F11D9ACF9F6B}.wem"
      }
     ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1259256166",
+       "Name": "New_RoomVerb",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Cathedrals\\New_RoomVerb",
+       "GUID": "{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "4095283000",
       "Name": "Play_Button_off",
       "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Button_off",
       "GUID": "{013E98A0-EB9F-4CB9-9932-4822087BE469}",
+      "MaxAttenuation": "3000",
       "DurationType": "OneShot",
-      "DurationMin": "0.17020833",
-      "DurationMax": "0.30514583",
-      "SwitchContainers": [
+      "DurationMin": "0.44527084",
+      "DurationMax": "0.44527084",
+      "MediaRefs": [
        {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "4050929301",
-         "Id": "660835419",
-         "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "83154899"
-         },
-         {
-          "Id": "211796984"
-         },
-         {
-          "Id": "324151547"
-         },
-         {
-          "Id": "353832452"
-         },
-         {
-          "Id": "629868767"
-         },
-         {
-          "Id": "669138820"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "Switch",
-         "GroupId": "4050929301",
-         "Id": "1216965916",
-         "GUID": "{0849C533-D672-46A7-AA7C-6C6261A5B942}",
-         "Default": "true"
-        },
-        "MediaRefs": [
-         {
-          "Id": "127986081"
-         },
-         {
-          "Id": "357705262"
-         },
-         {
-          "Id": "464355393"
-         },
-         {
-          "Id": "562553838"
-         },
-         {
-          "Id": "726171840"
-         },
-         {
-          "Id": "748953917"
-         },
-         {
-          "Id": "1029832407"
-         }
-        ]
+        "Id": "171948593"
        }
-      ]
-     }
-    ],
-    "SwitchGroups": [
-     {
-      "Id": "4050929301",
-      "Name": "Materials",
-      "ObjectPath": "\\Switches\\Default Work Unit\\Materials",
-      "GUID": "{C8F3BCA8-83F5-40B1-9488-BDE78E4E2C50}",
-      "Switches": [
-       {
-        "Id": "660835419",
-        "Name": "Plastic",
-        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Plastic",
-        "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
-       },
-       {
-        "Id": "1216965916",
-        "Name": "Stone",
-        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Stone",
-        "GUID": "{0849C533-D672-46A7-AA7C-6C6261A5B942}"
-       }
-      ]
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1259256166"
+        }
+       ]
+      }
      }
     ]
    }
   ],
-  "FileHash": "{EF57FB24-BC57-C257-3FBA-EB7E364CF69D}"
+  "FileHash": "{8B907D43-11C4-EAB1-E46B-6D05659946F9}"
  }
 }
