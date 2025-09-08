@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "Wwise/Packaging/WwiseAssetLibraryDetailsCustomization.h"
@@ -35,6 +35,8 @@ Copyright (c) 2024 Audiokinetic Inc.
 #include "Widgets/Input/SCheckBox.h"
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Notifications/SProgressBar.h"
+#include "Wwise/WwiseGuidConverter.h"
+#include "Wwise/Metadata/WwiseMetadataLanguage.h"
 #include "Wwise/Packaging/WwisePackagingSettings.h"
 
 #define LOCTEXT_NAMESPACE "WwisePackaging"
@@ -516,44 +518,68 @@ void FWwiseAssetLibraryDetailsCustomization::RebuildFilteredAssets()
 	}
 	bRebuildAlreadyRequested = true;
 
-	UE::Tasks::Launch(TEXT("FWwiseAssetLibraryDetailsCustomization::RebuildFilteredAssets"), [this, IsAliveRefCopy = IsAliveRef]
+	TArray<FAssetData> AssetsData;
+	FWwiseAssetLibraryProcessor::GetRelevantAssets(GetFilterableAssetLibrary()->GetPathName(), AssetsData);
+
+	AsyncTask(ENamedThreads::GameThread, [this, IsAliveRefCopy = IsAliveRef, AssetsData]() mutable
 	{
 		if (UNLIKELY(!*IsAliveRefCopy))
 		{
 			return;
 		}
+		
 		ClaimWorkingThread();
-		bRebuildAlreadyRequested = false;
-
 		if (!WeakDetailBuilder.IsValid())
 		{
 			ReleaseWorkingThread();
 			return;
 		}
 
-		UWwiseFilterableAssetLibrary* AssetLibrary { GetFilterableAssetLibrary() };
-		if (!AssetLibrary)
+		if (UWwiseFilterableAssetLibrary* AssetLibrary { GetFilterableAssetLibrary() })
 		{
-			ReleaseWorkingThread();
-			return;
+			AssetLibrary->Info.PreloadFilters();
 		}
 
-		TUniquePtr<FWwiseAssetLibraryFilteringSharedData> FilteringSharedData;
-		
-		const bool bResult {
-			CalculateFilteredAssets(AssetLibrary, FilteringSharedData)
-			&& CopyFilteredAssets(FilteringSharedData)
-		};
 		ReleaseWorkingThread();
-
-		if (bResult)
+		UE::Tasks::Launch(TEXT("FWwiseAssetLibraryDetailsCustomization::RebuildFilteredAssets"), [this, IsAliveRefCopy = IsAliveRef, AssetsData]
 		{
-			ApplySearchAndSort();
-		}
+			if (UNLIKELY(!*IsAliveRefCopy))
+			{
+				return;
+			}
+			ClaimWorkingThread();
+			bRebuildAlreadyRequested = false;
+
+			if (!WeakDetailBuilder.IsValid())
+			{
+				ReleaseWorkingThread();
+				return;
+			}
+
+			UWwiseFilterableAssetLibrary* AssetLibrary { GetFilterableAssetLibrary() };
+			if (!AssetLibrary)
+			{
+				ReleaseWorkingThread();
+				return;
+			}
+
+			TUniquePtr<FWwiseAssetLibraryFilteringSharedData> FilteringSharedData;
+			
+			const bool bResult {
+				CalculateFilteredAssets(AssetLibrary, FilteringSharedData, AssetsData)
+				&& CopyFilteredAssets(FilteringSharedData)
+			};
+			ReleaseWorkingThread();
+
+			if (bResult)
+			{
+				ApplySearchAndSort();
+			}
+		});
 	});
 }
 
-bool FWwiseAssetLibraryDetailsCustomization::CalculateFilteredAssets(UWwiseFilterableAssetLibrary* AssetLibrary, TUniquePtr<FWwiseAssetLibraryFilteringSharedData>& FilteringSharedData)
+bool FWwiseAssetLibraryDetailsCustomization::CalculateFilteredAssets(UWwiseFilterableAssetLibrary* AssetLibrary, TUniquePtr<FWwiseAssetLibraryFilteringSharedData>& FilteringSharedData, const TArray<FAssetData>& AssetsData)
 {
 	auto* ProjectDB{ FWwiseProjectDatabase::Get() };
 	if (UNLIKELY(!ProjectDB))
@@ -568,6 +594,7 @@ bool FWwiseAssetLibraryDetailsCustomization::CalculateFilteredAssets(UWwiseFilte
 	}
 
 	FilteringSharedData = TUniquePtr<FWwiseAssetLibraryFilteringSharedData>{ Processor->InstantiateSharedData(*ProjectDB) };
+	FilteringSharedData->AssetsData = AssetsData;
 	Processor->RetrieveAssetMap(*FilteringSharedData);
 
 	if (IsPackagingSettingsHonored())
@@ -575,21 +602,83 @@ bool FWwiseAssetLibraryDetailsCustomization::CalculateFilteredAssets(UWwiseFilte
 		FilterPackagingSettings(Processor, FilteringSharedData, AssetLibrary);
 	}	
 
-	Processor->FilterLibraryAssets(*FilteringSharedData, AssetLibrary->Info, false, true, false);
+	Processor->FilterLibraryAssets(*FilteringSharedData, AssetLibrary->Info, false, false);
 	return true;
 }
 
 bool FWwiseAssetLibraryDetailsCustomization::CopyFilteredAssets(TUniquePtr<FWwiseAssetLibraryFilteringSharedData>& FilteringSharedData)
 {
-	FilteredAssets.Reset(FilteringSharedData->FilteredAssets.Num());
-	TotalAssetsCount = FilteringSharedData.Get()->Sources.Num();
-
 	auto* ProjectDB{ FWwiseProjectDatabase::Get() };
 	if (UNLIKELY(!ProjectDB))
 	{
 		return false;
 	}
+
+	FWwiseAssetLibraryProcessor* Processor{ FWwiseAssetLibraryProcessor::Get() };
+	if (UNLIKELY(!Processor))
+	{
+		return false;
+	}
+
 	WwiseDataStructureScopeLock DB(*ProjectDB);
+
+	// Count all pre-filtered assets
+	TSet<FWwiseAssetLibraryTreeViewRef> TotalDeduplicatedAssets;
+	TotalDeduplicatedAssets.Reserve(FilteringSharedData->Sources.Num());
+	FWwiseAssetLibraryRef NewRef;
+	for (const auto& SourceRef : FilteringSharedData->Sources)
+	{
+		FString SourcePath;
+		Processor->CreateAssetLibraryRef(NewRef, SourceRef);
+		switch (NewRef.Type)
+		{
+		case EWwiseAssetLibraryRefType::InitBank:
+		case EWwiseAssetLibraryRefType::SoundBank:
+		{
+			const auto Ref {
+				DB.GetSoundBank({
+					NewRef.Guid,
+					(uint32)NewRef.Id,
+					NewRef.Name,
+					(uint32)NewRef.SoundBankId
+				}, NewRef.LanguageId)
+			};
+			if (!Ref.IsValid())
+			{
+				break;
+			}
+			SourcePath = *Ref.GetSoundBank()->Path;
+			break;
+		}
+		case EWwiseAssetLibraryRefType::Media:
+		{
+			const auto Ref {
+				DB.GetMediaFile({
+					NewRef.Guid,
+					(uint32)NewRef.Id,
+					NewRef.Name,
+					(uint32)NewRef.SoundBankId
+				}, NewRef.LanguageId)
+			};
+			if (!Ref.IsValid())
+			{
+				break;
+			}
+			SourcePath = *Ref.GetMedia()->Path;
+			break;
+		}
+		}
+		FName LanguageName{*DB.GetLanguageName(NewRef.LanguageId)};
+		if (LanguageName.IsNone())
+		{
+			LanguageName = TEXT("SFX");
+		}
+		FWwiseAssetLibraryTreeViewRef Ref{NewRef, SourcePath, LanguageName};
+		TotalDeduplicatedAssets.Add(Ref);
+	}
+
+	// Compile list of (de-duplicated) filtered assets
+	FilteredAssets.Reset(FilteringSharedData->FilteredAssets.Num());
 
 	TSet<FWwiseAssetLibraryTreeViewRef> SeenAssets;
 	for (const auto& FilteredAsset : FilteringSharedData->FilteredAssets)
@@ -623,7 +712,7 @@ bool FWwiseAssetLibraryDetailsCustomization::CopyFilteredAssets(TUniquePtr<FWwis
 					(uint32)FilteredAsset.Id,
 					FilteredAsset.Name,
 					(uint32)FilteredAsset.SoundBankId
-				})
+				}, FilteredAsset.LanguageId)
 			};
 			if (!Ref.IsValid())
 			{
@@ -652,6 +741,7 @@ bool FWwiseAssetLibraryDetailsCustomization::CopyFilteredAssets(TUniquePtr<FWwis
 		}
 	}
 
+	TotalAssetsCount = TotalDeduplicatedAssets.Num();
 	FilteredAssetsCount = FilteredAssets.Num();
 	return true;
 }
@@ -887,7 +977,7 @@ void FWwiseAssetLibraryDetailsCustomization::FilterPackagingSettings(FWwiseAsset
 		}
 
 		Processor->FilterLibraryAssets(*FilteringSharedData, AssetLibraryPtr->Info,
-		!AssetLibraryPtr->bFallthrough && Iter < AssetLibraryArray.Num() - 1, AssetLibraryPtr->bPackageAssets, false);
+			!AssetLibraryPtr->bFallthrough && Iter < AssetLibraryArray.Num() - 1, false);
 	}
 }
 

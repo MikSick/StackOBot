@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -122,8 +122,9 @@ void UAkPortalComponent::OnRegister()
 
 	SetRelativeTransform(FTransform::Identity);
 	InitializeParent();
+	UpdateConnectedRooms();
 	// Force update the room or outdoors room connections
-	UpdateConnectedRooms(true);
+	UpdatePortalConnections();
 	// Add portal to the WorldPortalsMap before tick.
 	// If the portal is created before the room, this will allow the room to update the portal afterwards
 	SetSpatialAudioPortal();
@@ -147,7 +148,11 @@ void UAkPortalComponent::OnUnregister()
 	FAkAudioDevice * Dev = FAkAudioDevice::Get();
 	if (Dev != nullptr)
 	{
-		RemovePortalConnections();
+		PreviousFrontRoom = FrontRoom;
+		PreviousBackRoom = BackRoom;
+		FrontRoom.Reset();
+		BackRoom.Reset();
+		UpdatePortalConnections();
 		Dev->RemoveSpatialAudioPortal(this);
 	}
 	Super::OnUnregister();
@@ -390,6 +395,11 @@ void UAkPortalComponent::TickComponent(float DeltaTime, enum ELevelTick TickType
 		UpdateConnectedRooms();
 	}
 
+	if (bPortalConnectionsNeedUpdate)
+	{
+		UpdatePortalConnections();
+	}
+
 	if (bPortalNeedsUpdate)
 	{
 		SetSpatialAudioPortal();
@@ -461,88 +471,43 @@ void UAkPortalComponent::ResetPortalOcclusion()
 	PortalOcclusionChanged = true;
 }
 
-bool UAkPortalComponent::UpdateConnectedRooms(bool in_bForceUpdate/* = false*/)
+void UAkPortalComponent::UpdateConnectedRooms()
 {
-	FAkAudioDevice* Dev = FAkAudioDevice::Get();
-	if (UNLIKELY(!Dev || !GetWorld()))
+	FAkAudioDevice* audioDevice = FAkAudioDevice::Get();
+	if (UNLIKELY(!audioDevice || !GetWorld()))
 	{
-		return false;
+		return;
 	}
 
 	/* Keep note of the rooms and validity before the update. */
-	TWeakObjectPtr<UAkRoomComponent> pPreviousFront = FrontRoom;
-	TWeakObjectPtr<UAkRoomComponent> pPreviousBack = BackRoom;
+	PreviousFrontRoom = FrontRoom;
+	PreviousBackRoom = BackRoom;
 	AkRoomID previousFrontID = GetFrontRoomID();
 	AkRoomID previousBackID = GetBackRoomID();
+
 	/* Update the room connections */
-	FrontRoom = TWeakObjectPtr<UAkRoomComponent>();
-	BackRoom = TWeakObjectPtr<UAkRoomComponent>();
-	FindConnectedComponents(Dev->GetRoomIndex(), FrontRoom, BackRoom);
+	FindConnectedComponents(audioDevice->GetRoomIndex(), FrontRoom, BackRoom);
 	LastRoomsUpdate = GetWorld()->GetTimeSeconds();
 	PreviousLocation = GetComponentLocation();
 	PreviousRotation = GetComponentRotation();
 
 	bool bRoomsChanged = false;
-	bool PortalIsValid = PortalPlacementValid();
 
-	if (in_bForceUpdate || GetFrontRoomID() != previousFrontID)
+	// Update the portal if the rooms have changed or if the previous rooms were stale
+	// A room can become stale when it is unregistered.
+	if (GetFrontRoomID() != previousFrontID || PreviousFrontRoom.IsStale())
 	{
 		bRoomsChanged = true;
-
-		if (pPreviousFront.IsValid())
-		{
-			pPreviousFront->RemovePortalConnection(GetPortalID());
-		}
-		else
-		{
-			Dev->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
-		}
-
-		if (PortalIsValid)
-		{
-			if (FrontRoom.IsValid())
-			{
-				FrontRoom->AddPortalConnection(this);
-			}
-			else
-			{
-				Dev->AddPortalConnectionToOutdoors(GetWorld(), this);
-			}
-		}
 	}
 
-	if (in_bForceUpdate || GetBackRoomID() != previousBackID)
+	if (GetBackRoomID() != previousBackID || PreviousBackRoom.IsStale())
 	{
 		bRoomsChanged = true;
-
-		// Make sure we are not removing connections we just added in the front room condition above.
-		if (pPreviousBack != FrontRoom)
-		{
-			if (pPreviousBack.IsValid())
-			{
-				pPreviousBack->RemovePortalConnection(GetPortalID());
-			}
-			else
-			{
-				Dev->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
-			}
-		}
-
-		if (PortalIsValid)
-		{
-			if (BackRoom.IsValid())
-			{
-				BackRoom->AddPortalConnection(this);
-			}
-			else
-			{
-				Dev->AddPortalConnectionToOutdoors(GetWorld(), this);
-			}
-		}
 	}
 
 	if (bRoomsChanged)
 	{
+		bPortalConnectionsNeedUpdate = true;
 		bPortalNeedsUpdate = true;
 #if WITH_EDITOR
 		UpdateRoomNames();
@@ -554,35 +519,57 @@ bool UAkPortalComponent::UpdateConnectedRooms(bool in_bForceUpdate/* = false*/)
 #endif
 
 	bPortalRoomsNeedUpdate = false;
-
-	/* Return true if any room connection has changed. */
-	return bRoomsChanged;
 }
 
-void UAkPortalComponent::RemovePortalConnections()
+void UAkPortalComponent::UpdatePortalConnections()
 {
-	FAkAudioDevice* Dev = FAkAudioDevice::Get();
-
-	if (FrontRoom.IsValid())
+	FAkAudioDevice* audioDevice = FAkAudioDevice::Get();
+	if (UNLIKELY(!audioDevice || !GetWorld()))
 	{
-		FrontRoom->RemovePortalConnection(GetPortalID());
-	}
-	else if (Dev != nullptr)
-	{
-		Dev->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
+		return;
 	}
 
-	if (BackRoom != FrontRoom)
+	bool PortalIsValid = PortalPlacementValid();
+
+	if (PreviousFrontRoom.IsValid())
 	{
+		PreviousFrontRoom->RemovePortalConnection(GetPortalID());
+	}
+	else
+	{
+		audioDevice->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
+	}
+
+	if (PreviousBackRoom.IsValid())
+	{
+		PreviousBackRoom->RemovePortalConnection(GetPortalID());
+	}
+	else
+	{
+		audioDevice->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
+	}
+
+	if (PortalIsValid)
+	{
+		if (FrontRoom.IsValid())
+		{
+			FrontRoom->AddPortalConnection(this);
+		}
+		else
+		{
+			audioDevice->AddPortalConnectionToOutdoors(GetWorld(), this);
+		}
 		if (BackRoom.IsValid())
 		{
-			BackRoom->RemovePortalConnection(GetPortalID());
+			BackRoom->AddPortalConnection(this);
 		}
-		else if (Dev != nullptr)
+		else
 		{
-			Dev->RemovePortalConnectionToOutdoors(GetWorld(), GetPortalID());
+			audioDevice->AddPortalConnectionToOutdoors(GetWorld(), this);
 		}
 	}
+
+	bPortalConnectionsNeedUpdate = false;
 }
 
 UPrimitiveComponent* UAkPortalComponent::GetPrimitiveParent() const
@@ -623,8 +610,8 @@ AkRoomID UAkPortalComponent::GetBackRoomID() const { return BackRoom.IsValid() ?
 
 void UAkPortalComponent::FindConnectedComponents(FAkEnvironmentIndex& RoomIndex, TWeakObjectPtr<UAkRoomComponent>& out_pFront, TWeakObjectPtr<UAkRoomComponent>& out_pBack)
 {
-	out_pFront = TWeakObjectPtr<UAkRoomComponent>();
-	out_pBack = TWeakObjectPtr<UAkRoomComponent>();
+	out_pFront.Reset();
+	out_pBack.Reset();
 
 	FAkAudioDevice* pAudioDevice = FAkAudioDevice::Get();
 	if (pAudioDevice != nullptr && Parent.IsValid())
@@ -701,6 +688,7 @@ void UAkPortalComponent::InitTextVisualizers()
 			Text->bAlwaysRenderAsText = true;
 			Text->SetHorizontalAlignment(EHTA_Center);
 			Text->SetWorldScale3D(FVector(1.0f));
+			Text->SetHiddenInGame(!GetDefault<UAkSettingsPerUser>()->VisualizeRoomsAndPortals);
 		}
 		FrontRoomText->SetVerticalAlignment(EVRTA_TextTop);
 		BackRoomText->SetVerticalAlignment(EVRTA_TextBottom);
@@ -786,8 +774,9 @@ void UAkPortalComponent::UpdateTextVisibility()
 	if (GetOwner() == nullptr) return;
 
 	bool Visible = false;
+	bool visualizeRoomsAndPortals = GetDefault<UAkSettingsPerUser>()->VisualizeRoomsAndPortals;
 
-	if (GetDefault<UAkSettingsPerUser>()->VisualizeRoomsAndPortals)
+	if (visualizeRoomsAndPortals)
 	{
 		Visible = true;
 	}
@@ -808,9 +797,15 @@ void UAkPortalComponent::UpdateTextVisibility()
 	}
 
 	if (BackRoomText != nullptr)
+	{
 		BackRoomText->SetVisibility(Visible);
+		BackRoomText->SetHiddenInGame(!visualizeRoomsAndPortals);
+	}
 	if (FrontRoomText != nullptr)
+	{
 		FrontRoomText->SetVisibility(Visible);
+		BackRoomText->SetHiddenInGame(!visualizeRoomsAndPortals);
+	}
 }
 
 void UAkPortalComponent::UpdateTextLocRotVis()

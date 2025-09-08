@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -36,6 +36,7 @@ Copyright (c) 2024 Audiokinetic Inc.
 #include "Wwise/API/WwiseSpatialAudioAPI.h"
 #include "Wwise/API/WwiseStreamMgrAPI.h"
 #include "Wwise/Stats/Global.h"
+#include "Wwise/WwiseAllowShrinking.h"
 #include "WwiseInitBankLoader/WwiseInitBankLoader.h"
 
 #include "AkCallbackInfoPool.h"
@@ -947,9 +948,7 @@ void FAkAudioDevice::UpdateRoomsForPortals()
 			{
 				if (Portal.IsValid())
 				{
-					const bool RoomsChanged = Portal->UpdateConnectedRooms();
-					if (RoomsChanged)
-						SetSpatialAudioPortal(Portal.Get());
+					Portal->PortalRoomsNeedUpdate();
 				}
 			}
 		}
@@ -1052,10 +1051,25 @@ void FAkAudioDevice::Teardown()
 
 			if (SoundEngine->IsInitialized())
 			{
-				FAkAudioDevice_Helpers::UnregisterAllGlobalCallbacks();
-
 				SoundEngine->StopAll();
 				SoundEngine->RenderAudio();
+
+				// Before unloading the SoundEngine, we are blocking the system until the resources are properly done playing.
+				// The delay is approximately adjusted to 500ms. After that delay, we give up. Most platforms have clear
+				// limits on app close delays.
+				int MaxCount = 500;
+				while (--MaxCount && ResourceUnloadFutures.Num())
+				{
+					FPlatformProcess::Sleep(0.001f);
+					CleanupUnfinishedResourceUnload();
+				}
+
+				if (UNLIKELY(ResourceUnloadFutures.Num()))
+				{
+					UE_LOG(LogAkAudio, Error, TEXT("%d resources remaining at shutdown"), ResourceUnloadFutures.Num());
+				}
+
+				FAkAudioDevice_Helpers::UnregisterAllGlobalCallbacks();
 			}
 		}
 
@@ -1608,7 +1622,7 @@ bool FAkAudioDevice::SetCurrentAudioCulture(const FString& NewAudioCulture, EAud
 		return false;
 	}
 
-	auto* ResourceLoader = FWwiseResourceLoader::Get();
+	FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 	if (UNLIKELY(!ResourceLoader))
 	{
 		UE_LOG(LogAkAudio, Warning, TEXT("FAkAudioDevice::SetCurrentAudioCulture: Could not get ResourceLoader to set Wwise language to %s. Skipping."),
@@ -2198,7 +2212,7 @@ void FAkAudioDevice::PostEventAtLocationEndOfEventCallback(AkCallbackType in_eTy
 		auto pPackage = (IAkUserEventCallbackPackage*)in_pCallbackInfo->pCookie;
 		if (pPackage && pPackage->HasExternalSources)
 		{
-			if (auto* ExternalSourceManager = IWwiseExternalSourceManager::Get())
+			if (auto ExternalSourceManager = IWwiseExternalSourceManager::Get())
 			{
 				ExternalSourceManager->OnEndOfEvent(((AkEventCallbackInfo*)in_pCallbackInfo)->playingID);
 			}
@@ -2208,6 +2222,11 @@ void FAkAudioDevice::PostEventAtLocationEndOfEventCallback(AkCallbackType in_eTy
 
 UAkComponent* FAkAudioDevice::SpawnAkComponentAtLocation( class UAkAudioEvent* in_pAkEvent, FVector Location, FRotator Orientation, bool AutoPost, bool AutoDestroy, UWorld* in_World)
 {
+	if (in_pAkEvent == NULL)
+	{
+		UE_LOG(LogAkAudio, Warning, TEXT("SpawnAkComponentAtLocation: The specified event was null. Aborting."));
+		return NULL;
+	}
 	UAkComponent * AkComponent = NULL;
 	if (in_World)
 	{
@@ -2233,7 +2252,7 @@ UAkComponent* FAkAudioDevice::SpawnAkComponentAtLocation( class UAkAudioEvent* i
 		{
 			if (AkComponent->PostAssociatedAkEvent(0, FOnAkPostEventCallback()) == AK_INVALID_PLAYING_ID && AutoDestroy)
 			{
-				AkComponent->ConditionalBeginDestroy();
+				AkComponent->DestroyComponent();
 				AkComponent = NULL;
 			}
 		}
@@ -3709,8 +3728,9 @@ bool FAkAudioDevice::SetSpatialAudioListener(UAkComponent* in_pListener)
 
 	auto* SpatialAudio = IWwiseSpatialAudioAPI::Get();
 	if (UNLIKELY(!SpatialAudio)) return false;
+	if (UNLIKELY(!IsValid(m_SpatialAudioListener))) return false;
 
-	SpatialAudio->RegisterListener((AkGameObjectID)m_SpatialAudioListener);
+	SpatialAudio->RegisterListener(m_SpatialAudioListener->GetAkGameObjectID());
 	return true;
 }
 
@@ -3933,6 +3953,26 @@ AKRESULT FAkAudioDevice::RegisterGameObject(AkGameObjectID GameObjectID, const F
 	return FAkAudioDevice_Helpers::RegisterGameObject(GameObjectID, Name);
 }
 
+void FAkAudioDevice::CleanupUnfinishedResourceUnload()
+{
+	FScopeLock Lock(&ResourceUnloadFuturesCriticalSection);
+	for (auto Num = ResourceUnloadFutures.Num() - 1; Num >= 0; --Num)
+	{
+		if (ResourceUnloadFutures[Num].IsReady())
+		{
+			ResourceUnloadFutures.RemoveAt(Num, 1, EWwiseAllowShrinking::No);
+		}
+	}
+}
+
+void FAkAudioDevice::AddUnfinishedResourceUnload(FWwiseResourceUnloadFuture&& ResourceUnload)
+{
+	CleanupUnfinishedResourceUnload();
+	
+	FScopeLock Lock(&ResourceUnloadFuturesCriticalSection);
+	ResourceUnloadFutures.Emplace(MoveTemp(ResourceUnload));
+}
+
 bool FAkAudioDevice::EnsureInitialized()
 {
 	static bool bPermanentInitializationFailure = false;
@@ -3959,7 +3999,7 @@ bool FAkAudioDevice::EnsureInitialized()
 		TEXT(AK_WWISESDK_COPYRIGHT));
 	bLogWwiseVersionOnce = false;
 
-	auto* ResourceLoader = FWwiseResourceLoader::Get();
+	FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 	if (UNLIKELY(!ResourceLoader))
 	{
 		UE_LOG(LogAkAudio, Error, TEXT("Wwise Initialization Error: No ResourceLoader module"));
@@ -4408,7 +4448,7 @@ bool FAkAudioDevice::SetCurrentAudioCultureAsyncTask::Start()
 
 	AsyncTask(ENamedThreads::AnyNormalThreadNormalTask, [this]()
 	{
-		auto* ResourceLoader = FWwiseResourceLoader::Get();
+		FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 		if (UNLIKELY(!ResourceLoader))
 		{
 			UE_LOG(LogAkAudio, Error, TEXT("SetCurrentAudioCultureAsync: Could not get resource loader, cannot change language."));

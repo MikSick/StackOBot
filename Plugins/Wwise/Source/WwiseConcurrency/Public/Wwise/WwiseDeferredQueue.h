@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -97,15 +97,23 @@ struct WWISECONCURRENCY_API FWwiseDeferredQueue
 protected:
 	FWwiseExecutionQueue AsyncExecutionQueue;
 
-	using FOps = TQueue<FFunction, EQueueMode::Mpsc>;
-	using FSyncOps = TQueue<FSyncFunction, EQueueMode::Mpsc>;
+	using FOps = TLockFreePointerListFIFO<FFunction, PLATFORM_CACHE_LINE_SIZE>;
+	using FSyncOps = TLockFreePointerListFIFO<FSyncFunction, PLATFORM_CACHE_LINE_SIZE>;
 	FOps AsyncOpQueue;
 	FSyncOps SyncOpQueue;
 	FOps GameOpQueue;
-	TAtomic<int> GameThreadExecuting {0};
+	std::atomic<int> GameThreadExecuting {0};
 	bool bSyncThreadDone = false;
 	bool bClosing = false;
 	AK::IAkGlobalPluginContext* Context { nullptr };
+
+	enum class WWISECONCURRENCY_API EWwiseDeferredAsyncState
+	{
+		Idle,
+		Running,
+		Done
+	};
+	std::atomic<EWwiseDeferredAsyncState> AsyncState { EWwiseDeferredAsyncState::Idle };
 
 private:
 	void AsyncExec();

@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 using UnrealBuildTool;
@@ -153,6 +153,11 @@ public struct WwiseSoundEngine_2024_1
             }
 
             SE.PublicFrameworks.AddRange(WwiseUEPlatformInstance.GetPublicFrameworks());
+
+            foreach (var Framework in WwiseUEPlatformInstance.GetAdditionalFrameworks())
+            {
+                SE.PublicAdditionalFrameworks.Add(new ModuleRules.Framework(Framework.Key, Framework.Value, ModuleRules.Framework.FrameworkMode.Copy));
+            }
 
             SE.PublicDelayLoadDLLs.AddRange(WwiseUEPlatformInstance.GetPublicDelayLoadDLLs());
             foreach (var RuntimeDependency in WwiseUEPlatformInstance.GetRuntimeDependencies())

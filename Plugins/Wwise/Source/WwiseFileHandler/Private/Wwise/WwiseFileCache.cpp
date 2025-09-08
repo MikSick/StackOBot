@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "Wwise/WwiseFileCache.h"
@@ -103,10 +103,9 @@ void FWwiseFileCache::CreateFileCacheHandle(
 }
 
 void FWwiseFileCache::CreateFileCacheHandle(IWwiseFileCacheHandle*& OutHandle,
-	const FBulkDataSharedRef& BulkData, FWwiseFileOperationDone&& OnDone,
-	int64 OffsetFromStart)
+	const FBulkDataSharedRef& BulkData, FWwiseFileOperationDone&& OnDone)
 {
-	OutHandle = new FWwiseBulkDataCacheHandle(BulkData, OffsetFromStart);
+	OutHandle = new FWwiseBulkDataCacheHandle(BulkData);
 	if (UNLIKELY(!OutHandle))
 	{
 		OnDone(false);

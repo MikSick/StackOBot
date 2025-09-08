@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -111,6 +111,7 @@ class WWISERECONCILE_API IWwiseReconcile
 {
 protected:
 	TMap<FGuid, FWwiseNewAsset> GuidToWwiseRef;
+	TMap<uint32, FWwiseNewAsset> ShortIdToWwiseRef;
 
 	TArray<FWwiseReconcileItem> AssetsToUpdate;
 	TArray<FAssetData> AssetsToRename;
@@ -142,7 +143,7 @@ public:
 		return nullptr;
 	}
 	
-	virtual FString GetAssetPackagePath(const WwiseAnyRef& WwiseRef) = 0;
+	virtual FString GetAssetPackagePath(const WwiseAnyRef& WwiseRef) const = 0;
 	virtual void GetAllAssets(TArray<FWwiseReconcileItem>& ReconcileItems) = 0;
 	virtual TArray<FAssetData> CreateAssets(FScopedSlowTask& SlowTask) = 0;
 	virtual TArray<FAssetData> UpdateExistingAssets(FScopedSlowTask& SlowTask) = 0;
@@ -159,6 +160,9 @@ public:
 	virtual bool AddToUpdate(FWwiseReconcileItem& Item) = 0;
 	virtual bool AddToMove(FWwiseReconcileItem& Item) = 0;
 	virtual bool ShouldMove(const WwiseAnyRef& Ref, FAssetData InAssetPath, FString& OutNewAssetPath) = 0;
+
+	bool UAssetExists(const WwiseAnyRef* WwiseRef) const;
+	bool IsPathTooLong(const WwiseAnyRef* WwiseRef) const;
 	
 	bool ReconcileAssets(EWwiseReconcileOperationFlags OperationFlags = EWwiseReconcileOperationFlags::All);
 

@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "MovieSceneAkAudioEventSection.h"
@@ -303,7 +303,7 @@ void UMovieSceneAkAudioEventSection::SubscribeToEventChildren()
 						options->SetArrayField(FAkWaapiClient::WAAPIStrings::RETURN, StructJsonArray);
 
 #if AK_SUPPORT_WAAPI
-						if (pWaapiClient->Call(ak::wwise::core::object::get, args, options, outJsonResult, 500))
+						if (pWaapiClient->Call(ak::wwise::core::object::get, args, options, outJsonResult))
 						{
 							if (outJsonResult->HasField(FAkWaapiClient::WAAPIStrings::RETURN))
 							{
@@ -343,7 +343,7 @@ void UMovieSceneAkAudioEventSection::UnsubscribeWAAPICallback(uint64& in_iSubID)
 		TSharedPtr<FJsonObject> unsubscribeResult = MakeShareable(new FJsonObject());
 		FAkWaapiClient* pWaapiClient = FAkWaapiClient::Get();
 		if (pWaapiClient != nullptr)
-			pWaapiClient->Unsubscribe(in_iSubID, unsubscribeResult, 500, true);
+			pWaapiClient->Unsubscribe(in_iSubID, unsubscribeResult, true);
 		in_iSubID = 0;
 	}
 }

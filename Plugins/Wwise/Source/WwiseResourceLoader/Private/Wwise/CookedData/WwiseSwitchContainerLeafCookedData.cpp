@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "Wwise/CookedData/WwiseSwitchContainerLeafCookedData.h"
@@ -52,6 +52,7 @@ void FWwiseSwitchContainerLeafCookedData::SerializeBulkData(FArchive& Ar, const 
 	// Switch Container Leaves are optional
 	auto Options(InOptions);
 	Options.bOptional = true;
+	Options.ExtraLog += ", Switch Container";
 	
 	for (auto& SoundBank : SoundBanks)
 	{
@@ -64,7 +65,7 @@ void FWwiseSwitchContainerLeafCookedData::SerializeBulkData(FArchive& Ar, const 
 }
 
 #if WITH_EDITORONLY_DATA && UE_5_5_OR_LATER
-void FWwiseSwitchContainerLeafCookedData::PreSave(FObjectPreSaveContext& SaveContext, FCbWriter& Writer) const
+void FWwiseSwitchContainerLeafCookedData::GetPlatformCookDependencies(FWwiseCookEventContext& SaveContext, FCbWriter& Writer) const
 {
 	Writer << "L";
 	Writer.BeginObject();
@@ -77,7 +78,7 @@ void FWwiseSwitchContainerLeafCookedData::PreSave(FObjectPreSaveContext& SaveCon
 	
 		for (const auto& GroupValue : GroupValueArray)
 		{
-			GroupValue.PreSave(SaveContext, Writer);
+			GroupValue.GetPlatformCookDependencies(SaveContext, Writer);
 		}
 		Writer.EndArray();
 	}
@@ -86,7 +87,7 @@ void FWwiseSwitchContainerLeafCookedData::PreSave(FObjectPreSaveContext& SaveCon
 	Writer.BeginArray();
 	for (const auto& SoundBank : SoundBanks)
 	{
-		SoundBank.PreSave(SaveContext, Writer);
+		SoundBank.GetPlatformCookDependencies(SaveContext, Writer);
 	}
 	Writer.EndArray();
 
@@ -94,7 +95,7 @@ void FWwiseSwitchContainerLeafCookedData::PreSave(FObjectPreSaveContext& SaveCon
 	Writer.BeginArray();
 	for (const auto& MediaItem : Media)
 	{
-		MediaItem.PreSave(SaveContext, Writer);
+		MediaItem.GetPlatformCookDependencies(SaveContext, Writer);
 	}
 	Writer.EndArray();
 
@@ -102,7 +103,7 @@ void FWwiseSwitchContainerLeafCookedData::PreSave(FObjectPreSaveContext& SaveCon
 	Writer.BeginArray();
 	for (const auto& ExternalSource : ExternalSources)
 	{
-		ExternalSource.PreSave(SaveContext, Writer);
+		ExternalSource.GetPlatformCookDependencies(SaveContext, Writer);
 	}
 	Writer.EndArray();
 	Writer.EndObject();

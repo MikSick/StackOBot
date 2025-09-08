@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -25,7 +25,7 @@ Copyright (c) 2024 Audiokinetic Inc.
 class WWISEFILEHANDLER_API FWwiseBulkDataCacheHandle : public IWwiseFileCacheHandle
 {
 public:
-	FWwiseBulkDataCacheHandle(const FBulkDataSharedRef& BulkData, int64 OffsetFromStart);
+	FWwiseBulkDataCacheHandle(const FBulkDataSharedRef& BulkData);
 	virtual ~FWwiseBulkDataCacheHandle() override;
 	virtual void CloseAndDelete() override;
 
@@ -37,7 +37,6 @@ public:
 
 protected:
 	FBulkDataSharedRef BulkData;
-	const int64 OffsetFromStart;
 
 	std::atomic<int32> RequestsInFlight { 0 };
 

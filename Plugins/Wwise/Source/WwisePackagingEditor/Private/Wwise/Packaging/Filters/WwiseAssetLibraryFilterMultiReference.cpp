@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "Wwise/Packaging/Filters/WwiseAssetLibraryFilterMultiReference.h"
@@ -22,7 +22,7 @@ Copyright (c) 2024 Audiokinetic Inc.
 bool UWwiseAssetLibraryFilterMultiReference::IsAssetAvailable(const FWwiseAssetLibraryFilteringSharedData& Shared,
 		const WwiseAnyRef& Asset) const
 {
-	return !Shared.Db.IsSingleUser(Asset);
+	return Shared.Db.GetUsageCount(Asset) != 1;
 }
 
 #define LOCTEXT_NAMESPACE "AssetTypeActions"

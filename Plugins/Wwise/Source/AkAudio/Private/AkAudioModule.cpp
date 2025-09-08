@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkAudioModule.h"
@@ -23,6 +23,7 @@ Copyright (c) 2024 Audiokinetic Inc.
 #include "WwiseUnrealDefines.h"
 
 #include "Wwise/Packaging/WwiseAssetLibrary.h"
+#include "Wwise/WwiseFileHandlerModule.h"
 #include "Wwise/WwiseResourceLoader.h"
 #include "Wwise/WwiseSoundEngineModule.h"
 #include "WwiseInitBankLoader/WwiseInitBankLoader.h"
@@ -35,7 +36,6 @@ Copyright (c) 2024 Audiokinetic Inc.
 #include "Wwise/API/WwiseSoundEngineAPI.h"
 
 #if WITH_EDITORONLY_DATA
-#include "Wwise/WwiseFileHandlerModule.h"
 #include "Wwise/WwiseProjectDatabase.h"
 #include "Wwise/WwiseDataStructure.h"
 #include "Wwise/WwiseResourceCooker.h"
@@ -49,6 +49,7 @@ Copyright (c) 2024 Audiokinetic Inc.
 #endif
 #include "Async/Async.h"
 #include "Platforms/AkPlatformInfo.h"
+#include "Wwise/WwiseConcurrencyModule.h"
 #include "Wwise/WwisePackagingModule.h"
 #include "Wwise/WwiseExternalSourceManager.h"
 #include "Wwise/Packaging/WwisePackagingSettings.h"
@@ -162,7 +163,16 @@ namespace WwiseUnrealHelper
 
 void FAkAudioModule::StartupModule()
 {
+	IWwiseConcurrencyModule::GetModule();
+	IWwiseFileHandlerModule::GetModule();
+	IWwiseResourceLoaderModule::GetModule();
 	IWwiseSoundEngineModule::ForceLoadModule();
+
+#if WITH_EDITORONLY_DATA
+	IWwiseProjectDatabaseModule::GetModule();
+	IWwiseResourceLoaderModule::GetModule();
+#endif
+
 	WwiseUnrealHelper::SetHelperFunctions(
 		WwiseUnrealHelper::GetWwiseSoundEnginePluginDirectoryImpl,
 		WwiseUnrealHelper::GetWwiseProjectPathImpl,
@@ -362,7 +372,7 @@ void FAkAudioModule::UpdateWwiseResourceCookerSettings()
 		UE_LOG(LogAkAudio, Error, TEXT("FAkAudioModule::UpdateWwiseResourceCookerSettings : No Project Database!"));
 		return;
 	}
-	auto* ExternalSourceManager = IWwiseExternalSourceManager::Get();
+	auto ExternalSourceManager = IWwiseExternalSourceManager::Get();
 	if (!ExternalSourceManager)
 	{
 		UE_LOG(LogAkAudio, Error, TEXT("FAkAudioModule::UpdateWwiseResourceCookerSettings : No External Source Manager!"))
@@ -466,7 +476,7 @@ void FAkAudioModule::CreateResourceCookerForPlatform(const ITargetPlatform* Targ
 		}
 	}
 	
-	auto* ExternalSourceManager = IWwiseExternalSourceManager::Get();
+	auto ExternalSourceManager = IWwiseExternalSourceManager::Get();
 	if (!ExternalSourceManager)
 	{
 		UE_LOG(LogAkAudio, Error, TEXT("FAkAudioModule::CreateResourceCookerForPlatform : No External Source Manager!"))

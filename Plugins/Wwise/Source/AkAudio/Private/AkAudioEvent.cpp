@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -34,6 +34,8 @@ Copyright (c) 2024 Audiokinetic Inc.
 #include "Wwise/Stats/AkAudio.h"
 
 #include <inttypes.h>
+
+#include "WwiseCookEventContext.h"
 
 #if WITH_EDITORONLY_DATA && UE_5_5_OR_LATER
 #include "UObject/ObjectSaveContext.h"
@@ -534,7 +536,7 @@ AkPlayingID UAkAudioEvent::PostEvent(const AkGameObjectID GameObjectID, FCreateC
 		return AK_INVALID_PLAYING_ID;
 	}
 
-	auto* ExternalSourceManager = IWwiseExternalSourceManager::Get();
+	auto ExternalSourceManager = IWwiseExternalSourceManager::Get();
 	if (UNLIKELY(!ExternalSourceManager))
 	{
 		UE_LOG(LogAkAudio, Warning, TEXT("Failed to post AkAudioEvent '%s' without the External Source Manager."), *GetName());
@@ -616,19 +618,27 @@ void UAkAudioEvent::Serialize(FArchive& Ar)
 #if WITH_EDITORONLY_DATA && UE_5_5_OR_LATER
 UE_COOK_DEPENDENCY_FUNCTION(HashWwiseAudioEventDependenciesForCook, UAkAudioType::HashDependenciesForCook);
 
-void UAkAudioEvent::PreSave(FObjectPreSaveContext SaveContext)
+#if UE_5_6_OR_LATER
+void UAkAudioEvent::OnCookEvent(UE::Cook::ECookEvent CookEvent, UE::Cook::FCookEventContext& Context)
 {
 	ON_SCOPE_EXIT
 	{
-		Super::PreSave(SaveContext);
+		Super::OnCookEvent(CookEvent, Context);
 	};
-
-	if (!SaveContext.IsCooking())
+#else
+void UAkAudioEvent::PreSave(FObjectPreSaveContext Context)
+{
+	ON_SCOPE_EXIT
+	{
+		Super::PreSave(Context);
+	};
+#endif
+	if (!Context.IsCooking())
 	{
 		return;
 	}
-
-	auto* ResourceCooker = IWwiseResourceCooker::GetForPlatform(SaveContext.GetTargetPlatform());
+		
+	auto* ResourceCooker = IWwiseResourceCooker::GetForPlatform(Context.GetTargetPlatform());
 	if (UNLIKELY(!ResourceCooker))
 	{
 		return;
@@ -640,15 +650,15 @@ void UAkAudioEvent::PreSave(FObjectPreSaveContext SaveContext)
 
 	FCbWriter Writer;
 	Writer.BeginObject();
-	CookedDataToArchive.PreSave(SaveContext, Writer);
+	CookedDataToArchive.GetPlatformCookDependencies(Context, Writer);
 	Writer
 		<< "Max" << MaximumDuration
 		<< "Min" << MinimumDuration
 		<< "Infinite" << IsInfinite
 		<< "Radius" << MaxAttenuationRadius;
 	Writer.EndObject();
-	
-	SaveContext.AddCookBuildDependency(
+
+	WwiseCookEventContext::AddLoadBuildDependency(Context, 
 		UE::Cook::FCookDependency::Function(
 			UE_COOK_DEPENDENCY_FUNCTION_CALL(HashWwiseAudioEventDependenciesForCook), Writer.Save()));
 }
@@ -721,7 +731,7 @@ void UAkAudioEvent::FillMetadata(FWwiseProjectDatabase* ProjectDatabase)
 void UAkAudioEvent::LoadEventData()
 {
 	SCOPED_AKAUDIO_EVENT_2(TEXT("LoadEventData"));
-	auto* ResourceLoader = FWwiseResourceLoader::Get();
+	FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 	if (UNLIKELY(!ResourceLoader))
 	{
 		return;
@@ -813,7 +823,7 @@ void UAkAudioEvent::UnloadEventData(bool bAsync)
 	auto PreviouslyLoadedEvent = LoadedEvent.exchange(nullptr);
 	if (PreviouslyLoadedEvent)
 	{
-		auto* ResourceLoader = FWwiseResourceLoader::Get();
+		FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 		if (UNLIKELY(!ResourceLoader))
 		{
 			return;

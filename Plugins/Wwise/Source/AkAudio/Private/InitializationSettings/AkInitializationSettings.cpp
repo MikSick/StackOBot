@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "InitializationSettings/AkInitializationSettings.h"
@@ -304,7 +304,7 @@ void FAkCommunicationSettings::FillInitializationStructure(FAkInitializationStru
 	CommSettings.ports.uCommand = CommandPort;
 
 	const FString GameName = GetCommsNetworkName();
-	FCStringAnsi::Strcpy(CommSettings.szAppNetworkName, AK_COMM_SETTINGS_MAX_STRING_SIZE, TCHAR_TO_ANSI(*GameName));
+	FCStringAnsi::Strncpy(CommSettings.szAppNetworkName, TCHAR_TO_ANSI(*GameName), AK_COMM_SETTINGS_MAX_STRING_SIZE);
 #endif
 }
 

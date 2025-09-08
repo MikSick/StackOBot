@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -1503,6 +1503,8 @@ public:
 	void LoadDelayedObjects();
 
 	bool IsWwiseProfilerConnected() const { return bWwiseProfilerConnected;}
+	void CleanupUnfinishedResourceUnload();
+	void AddUnfinishedResourceUnload(FWwiseResourceUnloadFuture&& ResourceUnload);
 
 private:
 	bool EnsureInitialized();
@@ -1633,4 +1635,6 @@ private:
 #endif //WITH_EDITORONLY_DATA
 
 	FThreadSafeBool bWwiseProfilerConnected {false};
+	FCriticalSection ResourceUnloadFuturesCriticalSection;
+	TArray<FWwiseResourceUnloadFuture> ResourceUnloadFutures;
 };

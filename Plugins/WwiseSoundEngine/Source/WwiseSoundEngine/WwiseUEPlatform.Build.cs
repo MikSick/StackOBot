@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 using UnrealBuildTool;
@@ -103,6 +103,12 @@ public abstract class WwiseUEPlatform
 	protected static List<string> GetAllLibrariesInFolder(string LibFolder, string Extension, bool RemoveLibPrefix = true, bool GetFullPath = false)
 	{
 		List<string> ret = null;
+
+		if (!Directory.Exists(LibFolder))
+		{
+			return new List<string>();
+		}
+
 		var FoundLibs = Directory.GetFiles(LibFolder, "*."+Extension);
 
 		if (GetFullPath)
@@ -192,18 +198,22 @@ public abstract class WwiseUEPlatform
 
 	public virtual List<string> GetRuntimeDependencies()
 	{
-		string PluginsDir = WwiseDspDir;
 		List<string> Result = GetAllLibrariesInFolder(Path.Combine(ThirdPartyFolder, AkPlatformLibDir, WwiseDspDir, "bin"), DynamicLibExtension, false, true);
 		return Result;
 	}
 
 	public abstract List<string> GetAdditionalWwiseLibs();
+
 	public abstract List<string> GetPublicSystemLibraries();
 	public abstract List<string> GetPublicDelayLoadDLLs();
 	public abstract List<string> GetPublicDefinitions();
 	public abstract Tuple<string, string> GetAdditionalPropertyForReceipt(string ModuleDirectory);
 	public abstract List<string> GetPublicFrameworks();
-	
+
+	public virtual IDictionary<string,string> GetAdditionalFrameworks()
+	{
+		return new Dictionary<string, string>();
+	}
 	public virtual List<string> GetSanitizedAkLibList(List<string> AkLibs)
 	{
 		List<string> SanitizedLibs = new List<string>();

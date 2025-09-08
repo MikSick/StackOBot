@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkInitBank.h"
@@ -90,7 +90,7 @@ void UAkInitBank::UnloadInitBank(bool bAsync)
 	auto PreviouslyLoadedInitBank = LoadedInitBank.exchange(nullptr);
 	if (PreviouslyLoadedInitBank)
 	{
-		auto* ResourceLoader = FWwiseResourceLoader::Get();
+		FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 		if (UNLIKELY(!ResourceLoader))
 		{
 			return;
@@ -112,19 +112,27 @@ void UAkInitBank::UnloadInitBank(bool bAsync)
 #if WITH_EDITORONLY_DATA && UE_5_5_OR_LATER
 UE_COOK_DEPENDENCY_FUNCTION(HashWwiseInitBankDependenciesForCook, UAkAudioType::HashDependenciesForCook);
 
-void UAkInitBank::PreSave(FObjectPreSaveContext SaveContext)
+#if UE_5_6_OR_LATER
+void UAkInitBank::OnCookEvent(UE::Cook::ECookEvent CookEvent, UE::Cook::FCookEventContext& Context)
 {
 	ON_SCOPE_EXIT
 	{
-		Super::PreSave(SaveContext);
+		Super::OnCookEvent(CookEvent, Context);
 	};
-
-	if (!SaveContext.IsCooking())
+#else
+void UAkInitBank::PreSave(FObjectPreSaveContext Context)
+{
+	ON_SCOPE_EXIT
+	{
+		Super::PreSave(Context);
+	};
+#endif
+	if (!Context.IsCooking())
 	{
 		return;
 	}
 
-	auto* ResourceCooker = IWwiseResourceCooker::GetForPlatform(SaveContext.GetTargetPlatform());
+	auto* ResourceCooker = IWwiseResourceCooker::GetForPlatform(Context.GetTargetPlatform());
 	if (UNLIKELY(!ResourceCooker))
 	{
 		return;
@@ -136,10 +144,10 @@ void UAkInitBank::PreSave(FObjectPreSaveContext SaveContext)
 
 	FCbWriter Writer;
 	Writer.BeginObject();
-	CookedDataToArchive.PreSave(SaveContext, Writer);
+	CookedDataToArchive.GetPlatformCookDependencies(Context, Writer);
 	Writer.EndObject();
 	
-	SaveContext.AddCookBuildDependency(
+	WwiseCookEventContext::AddLoadBuildDependency(Context,
 		UE::Cook::FCookDependency::Function(
 			UE_COOK_DEPENDENCY_FUNCTION_CALL(HashWwiseInitBankDependenciesForCook), Writer.Save()));
 }
@@ -190,7 +198,7 @@ void UAkInitBank::UnloadData(bool bAsync)
 void UAkInitBank::LoadInitBank()
 {
 	SCOPED_AKAUDIO_EVENT_2(TEXT("LoadInitBank"));
-	auto* ResourceLoader = FWwiseResourceLoader::Get();
+	FWwiseResourceLoaderPtr ResourceLoader = FWwiseResourceLoader::Get();
 	if (UNLIKELY(!ResourceLoader))
 	{
 		return;

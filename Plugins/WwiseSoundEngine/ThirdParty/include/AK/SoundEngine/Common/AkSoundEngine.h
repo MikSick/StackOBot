@@ -21,7 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Copyright (c) 2024 Audiokinetic Inc.
+  Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 // AkSoundEngine.h
@@ -88,6 +88,10 @@ struct AkPlatformInitSettings { };
 #elif defined( AK_NX )
 #include <AK/SoundEngine/Platforms/NX/AkNXSoundEngine.h>
 #include <AK/SoundEngine/Platforms/NX/AkPlatformContext.h>
+
+#elif defined( AK_OUNCE )
+#include <AK/SoundEngine/Platforms/Ounce/AkOunceSoundEngine.h>
+#include <AK/SoundEngine/Platforms/Ounce/AkPlatformContext.h>
 
 #else
 #error AkSoundEngine.h: Undefined platform

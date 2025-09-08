@@ -21,7 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Copyright (c) 2024 Audiokinetic Inc.
+  Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /// \file 
@@ -523,7 +523,7 @@ namespace AK
 		/// AK::StreamMgr::IAkFileLocationResolver implementations query this string. They may use it to 
 		/// construct a file path (for e.g. SDK/samples/SoundEngine/Common/AkFileLocationBase.cpp), or to
 		/// find a language-specific file within a look-up table (for e.g. SDK/samples/SoundEngine/Common/AkFilePackageLUT.cpp).
-		/// \return Current language.
+		/// \return Current language in string format, as specified in AK::StreamMgr::SetCurrentLanguage().
 		/// \sa AK::StreamMgr::SetCurrentLanguage()
 		AK_EXTERNAPIFUNC( const AkOSChar *, GetCurrentLanguage )();
 

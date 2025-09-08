@@ -15,9 +15,6 @@
 									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{CC580C78-E6A8-47BB-BB72-038A47119ED8}" ShortID="351247390">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Footsteps_Stone" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>

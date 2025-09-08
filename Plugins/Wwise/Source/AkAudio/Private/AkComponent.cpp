@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -430,7 +430,7 @@ void UAkComponent::OnRegister()
 		RegisterGameObject(); // Done before parent so that OnUpdateTransform follows registration and updates position correctly.
 
 	FAkAudioDevice* AudioDevice = FAkAudioDevice::Get();
-	if (AudioDevice)
+	if (AudioDevice && CurrentWorld)
 	{
 		ObstructionService.Init(GetAkGameObjectID(), CurrentWorld, OcclusionRefreshInterval, AudioDevice->UsingSpatialAudioRooms(CurrentWorld));
 	}
@@ -637,6 +637,13 @@ void UAkComponent::BeginPlay()
 
 	if (EnableSpotReflectors)
 		AAkSpotReflector::UpdateSpotReflectors(this);
+
+	FAkAudioDevice* AudioDevice = FAkAudioDevice::Get();
+	UWorld* CurrentWorld = GetWorld();
+	if (AudioDevice && CurrentWorld)
+	{
+		ObstructionService.Init(GetAkGameObjectID(), CurrentWorld, OcclusionRefreshInterval, AudioDevice->UsingSpatialAudioRooms(CurrentWorld));
+	}
 }
 
 void UAkComponent::OnUpdateTransform(EUpdateTransformFlags UpdateTransformFlags, ETeleportType Teleport)

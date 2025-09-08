@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -47,5 +47,17 @@ struct WWISEPACKAGINGEDITOR_API FWwiseAssetLibraryFilteringSharedData
 	 * This is what got calculated in the previous Filter action. Depending on context, this might be store in the asset or not.
 	 */
 	TArray<FWwiseAssetLibraryRef> FilteredAssets;
+
+	/**
+	 * Assets considered to be filtered
+	 */
+	TArray<FAssetData> AssetsData;
+
+	/**
+	 * Number of assets that should not be filtered due to being in a different package
+	 */
+	int32 SkippedAssetsCount;
+
+	bool bConsiderAssetsData = true;
 
 };

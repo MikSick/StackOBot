@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 /*=============================================================================
@@ -489,7 +489,6 @@ void FAudiokineticToolsModule::OnAssetRegistryFilesLoaded()
 	UAkSettings* AkSettings = GetMutableDefault<UAkSettings>();
 	UAkSettingsPerUser* AkSettingsPerUser = GetMutableDefault<UAkSettingsPerUser>();
 	auto* CurrentProject = IProjectManager::Get().GetCurrentProject();
-	bool doModifyProject = true;
 
 	WwiseProjectInfo wwiseProjectInfo;
 	wwiseProjectInfo.Parse();
@@ -525,11 +524,6 @@ void FAudiokineticToolsModule::OnAssetRegistryFilesLoaded()
 	if (CurrentProject && AkSettings && AkSettingsPerUser)
 	{
 		VerifyGeneratedSoundBanksPath(AkSettings, AkSettingsPerUser);
-
-		if (doModifyProject)
-		{
-			AssetMigrationManager.SetStandardProjectSettings();
-		}
 	}
 }
 

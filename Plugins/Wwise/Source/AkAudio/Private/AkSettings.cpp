@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkSettings.h"
@@ -79,7 +79,7 @@ bool WAAPIGetTextureParams(FGuid textureID, FAkAcousticTextureParams& params)
 		options->SetArrayField(FAkWaapiClient::WAAPIStrings::RETURN, StructJsonArray);
 
 		TSharedPtr<FJsonObject> outJsonResult;
-		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, 500, false))
+		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, false))
 		{
 			/* Get absorption values from WAAPI return json. */
 			TArray<TSharedPtr<FJsonValue>> returnJson = outJsonResult->GetArrayField(FAkWaapiClient::WAAPIStrings::RETURN);
@@ -119,7 +119,7 @@ bool WAAPIGetObjectColorIndex(FGuid textureID, int& index)
 		options->SetArrayField(FAkWaapiClient::WAAPIStrings::RETURN, StructJsonArray);
 
 		TSharedPtr<FJsonObject> outJsonResult;
-		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, 500, false))
+		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, false))
 		{
 			/* Get absorption values from WAAPI return json. */
 			TArray<TSharedPtr<FJsonValue>> returnJson = outJsonResult->GetArrayField(FAkWaapiClient::WAAPIStrings::RETURN);
@@ -155,7 +155,7 @@ bool WAAPIGetObjectOverrideColor(FGuid textureID)
 		options->SetArrayField(FAkWaapiClient::WAAPIStrings::RETURN, StructJsonArray);
 
 		TSharedPtr<FJsonObject> outJsonResult;
-		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, 500, false))
+		if (waapiClient->Call(ak::wwise::core::object::get, getArgsJson, options, outJsonResult, false))
 		{
 			/* Get absorption values from WAAPI return json. */
 			TArray<TSharedPtr<FJsonValue>> returnJson = outJsonResult->GetArrayField(FAkWaapiClient::WAAPIStrings::RETURN);
@@ -1238,33 +1238,60 @@ void UAkSettings::OnAudioRoutingUpdate()
 			}
 		}
 
+		FConfigFile ConfigFile;
+		ConfigFile.Read(PlatformEnginePath);
+		
 		if (bExpectedUsingAudioMixer)
 		{
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Removing UseAudioMixer override"), *RelativePlatformEnginePath);
-			GConfig->RemoveKey(TEXT("Audio"), TEXT("UseAudioMixer"), PlatformEnginePath);
+#if UE_5_4_OR_LATER
+			ConfigFile.RemoveKeyFromSection(TEXT("Audio"), TEXT("UseAudioMixer"));
+#else
+			if( FConfigSection* Sec = ConfigFile.Find( TEXT("Audio") ) )
+			{
+				if( Sec->Remove(TEXT("UseAudioMixer")) > 0 )
+				{
+					ConfigFile.Dirty = true;
+				}
+			}
+#endif
 		}
 		else
 		{
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Updating UseAudioMixer to: %s"), *RelativePlatformEnginePath, bExpectedUsingAudioMixer ? TEXT("true") : TEXT("false"));
-			GConfig->SetBool(TEXT("Audio"), TEXT("UseAudioMixer"), bExpectedUsingAudioMixer, PlatformEnginePath);
+			ConfigFile.SetBool(TEXT("Audio"), TEXT("UseAudioMixer"), bExpectedUsingAudioMixer);
 		}
 
 		if (bExpectedAudioModuleOverride)
 		{
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Updating AudioDeviceModuleName: %s"), *RelativePlatformEnginePath, ExpectedAudioDeviceModuleName.IsEmpty() ? TEXT("[empty]") : *ExpectedAudioDeviceModuleName);
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Updating AudioMixerModuleName: %s"), *RelativePlatformEnginePath, ExpectedAudioMixerModuleName.IsEmpty() ? TEXT("[empty]") : *ExpectedAudioMixerModuleName);
-			GConfig->SetString(TEXT("Audio"), TEXT("AudioDeviceModuleName"), *ExpectedAudioDeviceModuleName, PlatformEnginePath);
-			GConfig->SetString(TEXT("Audio"), TEXT("AudioMixerModuleName"), *ExpectedAudioMixerModuleName, PlatformEnginePath);
+			ConfigFile.SetString(TEXT("Audio"), TEXT("AudioDeviceModuleName"), *ExpectedAudioDeviceModuleName);
+			ConfigFile.SetString(TEXT("Audio"), TEXT("AudioMixerModuleName"), *ExpectedAudioMixerModuleName);
 		}
 		else
 		{
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Removing AudioDeviceModuleName override"), *RelativePlatformEnginePath);
 			UE_LOG(LogAkAudio, Log, TEXT("%s: Removing AudioMixerModuleName override"), *RelativePlatformEnginePath);
-			GConfig->RemoveKey(TEXT("Audio"), TEXT("AudioDeviceModuleName"), PlatformEnginePath);
-			GConfig->RemoveKey(TEXT("Audio"), TEXT("AudioMixerModuleName"), PlatformEnginePath);
+#if UE_5_4_OR_LATER
+			ConfigFile.RemoveKeyFromSection(TEXT("Audio"), TEXT("AudioDeviceModuleName"));
+			ConfigFile.RemoveKeyFromSection(TEXT("Audio"), TEXT("AudioMixerModuleName"));
+#else
+			if( FConfigSection* Sec = ConfigFile.Find( TEXT("Audio") ) )
+			{
+				if( Sec->Remove(TEXT("AudioDeviceModuleName")) > 0 )
+				{
+					ConfigFile.Dirty = true;
+				}
+				if( Sec->Remove(TEXT("AudioMixerModuleName")) > 0 )
+				{
+					ConfigFile.Dirty = true;
+				}
+			}
+#endif
 		}
 
-		GConfig->Flush(false, PlatformEnginePath);
+		ConfigFile.Write(PlatformEnginePath);
 	}
 }
 

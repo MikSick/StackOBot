@@ -12,13 +12,14 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 using UnrealBuildTool;
 using System;
 using System.IO;
 using System.Collections.Generic;
+using EpicGames.Core;
 
 public class WwiseUEPlatform_2024_1_Mac : WwiseUEPlatform
 {
@@ -37,7 +38,26 @@ public class WwiseUEPlatform_2024_1_Mac : WwiseUEPlatform
 
 	public override bool SupportsDeviceMemory { get { return false; } }
 
-	public override string AkPlatformLibDir { get { return "Mac_Xcode1400"; } }
+    public override string AkPlatformLibDir { get { 
+		string xCodePath = UnrealBuildTool.Utils.RunLocalProcessAndReturnStdOut("/bin/sh", "-c 'xcode-select -p'");
+		DirectoryReference DeveloperDir = new DirectoryReference(xCodePath);
+		FileReference Plist = FileReference.Combine(DeveloperDir.ParentDirectory!, "Info.plist");
+		// Find out the version number in Xcode.app/Contents/Info.plist
+		string ReturnedVersion = UnrealBuildTool.Utils.RunLocalProcessAndReturnStdOut("/bin/sh",
+		 $"-c 'plutil -extract CFBundleShortVersionString raw {Plist}'");
+		string[] Version = ReturnedVersion.Split('.');
+		if (Version.Length == 2)
+		{
+		 var Major = int.Parse(Version[0]);
+		 return "Mac_Xcode"+Major+"00";
+		}
+#if UE_5_5_OR_LATER
+		return "Mac_Xcode1500"; 
+#else
+		return "Mac_Xcode1400"; 
+#endif
+       } 
+    }
 
 	public override string DynamicLibExtension { get { return "dylib"; } }
 
@@ -58,7 +78,11 @@ public class WwiseUEPlatform_2024_1_Mac : WwiseUEPlatform
 
 	public override List<string> GetPublicDefinitions()
 	{
-		return new List<string>();
+		string MacPlatformFolderDefine = string.Format("WWISE_MAC_PLATFORM_FOLDER=\"{0}\"", AkPlatformLibDir);
+		return new List<string>
+		{
+			MacPlatformFolderDefine
+		};
 	}
 
 	public override Tuple<string, string> GetAdditionalPropertyForReceipt(string ModuleDirectory)

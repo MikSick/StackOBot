@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "AkMigrationWidgets.h" 
@@ -546,24 +546,11 @@ bool SBankTransferWidget::CheckWaapiConnection() const
 	bool bWaapiConnected = false;
 	if (auto UserSettings =  GetDefault<UAkSettingsPerUser>())
 	{
-		if (!UserSettings->bAutoConnectToWAAPI)
-		{
-			LOCTEXT("WaapiTransferMenuItemText","WAAPI (Auto Connect to WAAPI disabled in user settings)");
-		}
-		else
+		if (UserSettings->bAutoConnectToWAAPI)
 		{
 			FAkWaapiClient* WaapiClient = FAkWaapiClient::Get();
 			bWaapiConnected = WaapiClient && WaapiClient->IsConnected();
-			if (!bWaapiConnected)
-			{
-				LOCTEXT("WaapiTransferMenuItemText","WAAPI (WAAPI connection not established)");
-			}
 		}
-	}
-
-	if (bWaapiConnected)
-	{
-		LOCTEXT("WaapiTransferMenuItemText","WAAPI");
 	}
 	return bWaapiConnected;
 }

@@ -21,7 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Copyright (c) 2024 Audiokinetic Inc.
+  Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 // AkAtomic.h
@@ -34,6 +34,8 @@ the specific language governing permissions and limitations under the License.
 	#include <AK/SoundEngine/Platforms/Emscripten/AkAtomic.h>
 #elif defined(AK_NX)
 	#include <AK/SoundEngine/Platforms/NX/AkAtomic.h>
+#elif defined(AK_OUNCE)
+	#include <AK/SoundEngine/Platforms/Ounce/AkAtomic.h>
 #elif defined(AK_PS4)
 	#include <AK/SoundEngine/Platforms/PS4/AkAtomic.h>
 #elif defined(AK_PS5)

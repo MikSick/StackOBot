@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "WaapiDataSource.h"
@@ -1079,7 +1079,7 @@ EWwiseConnectionStatus FWaapiDataSource::IsProjectLoaded()
 		{
 			FString WaapiPath;
 			TSharedPtr<FJsonObject> outJsonResult;
-			AkWaapiClient->Call(ak::wwise::core::getProjectInfo, MakeShareable(new FJsonObject()), MakeShareable(new FJsonObject()), outJsonResult, 500, false);
+			AkWaapiClient->Call(ak::wwise::core::getProjectInfo, MakeShareable(new FJsonObject()), MakeShareable(new FJsonObject()), outJsonResult, false);
 			if(auto directoriesObject = outJsonResult->GetObjectField(TEXT("directories")))
 			{
 				WaapiPath = directoriesObject->GetStringField(TEXT("soundBankOutputRoot"));

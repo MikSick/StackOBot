@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #include "Wwise/WwiseBulkDataCacheHandle.h"
@@ -29,9 +29,8 @@ Copyright (c) 2024 Audiokinetic Inc.
 
 #include <inttypes.h>
 
-FWwiseBulkDataCacheHandle::FWwiseBulkDataCacheHandle(const FBulkDataSharedRef& InBulkData, int64 InOffsetFromStart) :
-	BulkData { InBulkData },
-	OffsetFromStart { InOffsetFromStart }
+FWwiseBulkDataCacheHandle::FWwiseBulkDataCacheHandle(const FBulkDataSharedRef& InBulkData) :
+	BulkData { InBulkData }
 {
 	UE_LOG(LogWwiseFileHandler, VeryVerbose, TEXT("FWwiseBulkDataCacheHandle::FWwiseBulkDataCacheHandle (%p) Creating %s."), this, *GetDebugName());
 	INC_DWORD_STAT(STAT_WwiseFileHandlerOpenedStreams);
@@ -160,15 +159,6 @@ void FWwiseBulkDataCacheHandle::ReadData(uint8* OutBuffer, int64 Offset, int64 B
 	FWwiseAsyncCycleCounter Stat(GET_STATID(STAT_WwiseFileHandlerFileOperationLatency));
 
 	++RequestsInFlight;
-
-	Offset += OffsetFromStart;
-	if (UNLIKELY(Offset < 0))
-	{
-		UE_LOG(LogWwiseFileHandler, Error, TEXT("FWwiseBulkDataCacheHandle::ReadData (%p): %" PRIi64 "@%" PRIi64 " in %s has negative value! (OffsetFromStart=%" PRIi64 ")"), this, BytesToRead, Offset, *GetDebugName(), OffsetFromStart);
-
-		OnReadDataDone(true, nullptr, MoveTemp(OnDone));
-		return DeleteRequest(nullptr);
-	}
 
 	UE_LOG(LogWwiseFileHandler, VeryVerbose, TEXT("FWwiseBulkDataCacheHandle::ReadData (%p): %" PRIi64 "@%" PRIi64 " in %s"), this, BytesToRead, Offset, *GetDebugName());
 	FBulkDataIORequestCallBack ReadCallbackFunction = [this, OnDone = new FWwiseFileOperationDone(MoveTemp(OnDone)), BytesToRead, Stat = MoveTemp(Stat)](bool bWasCancelled, IBulkDataIORequest* Request) mutable

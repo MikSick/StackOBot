@@ -21,7 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Copyright (c) 2024 Audiokinetic Inc.
+  Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 // AkTypes.h
@@ -52,7 +52,7 @@ the specific language governing permissions and limitations under the License.
 typedef AkUInt32		AkUniqueID;			 		///< Unique 32-bit ID
 typedef AkUInt32		AkStateID;			 		///< State ID
 typedef AkUInt32		AkStateGroupID;		 		///< State group ID
-typedef AkUInt32		AkPlayingID;		 		///< Playing ID
+typedef AkUInt32		AkPlayingID;		 		///< A unique identifier generated whenever a PostEvent is called (or when a Dynamic Sequence is created). This identifier serves as a handle to control and interact with individual playback instances, such as stopping a specific instance, and is the ID used in the EndOfEvent callback (see AkCallbackType).
 typedef	AkInt32			AkTimeMs;			 		///< Time in ms
 typedef AkUInt16		AkPortNumber;				///< Port number
 typedef AkReal32		AkPitchValue;		 		///< Pitch value

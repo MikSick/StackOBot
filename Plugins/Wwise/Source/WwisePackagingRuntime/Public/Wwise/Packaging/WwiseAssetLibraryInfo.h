@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -88,7 +88,7 @@ public:
 	 * Shared filters to use to select assets to include in this Asset Library, and that can be applied to multiple Asset Libraries.
 	 */
 	UPROPERTY(EditAnywhere, Category = "Default", meta=(EditConditionHides=true))
-	TArray<TWeakObjectPtr<UWwiseSharedAssetLibraryFilter>> SharedFilters;
+	TArray<TSoftObjectPtr<UWwiseSharedAssetLibraryFilter>> SharedFilters;
 
 	/**
 	 * Filtered assets, as determined by the current filter criteria.
@@ -97,7 +97,12 @@ public:
 	 */
 	TArray<FWwiseAssetLibraryRef> FilteredAssets;
 
+	void PreloadFilters();
 	TArray<TObjectPtr<UWwiseAssetLibraryFilter>> GetFilters(
 		TSet<const UObject*>* ProcessedFilters = nullptr) const;
+
+protected:
+	UPROPERTY(Transient)
+	TArray<TObjectPtr<UWwiseSharedAssetLibraryFilter>> PreloadedFilters;
 #endif
 };

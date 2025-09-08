@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -48,7 +48,7 @@ using WwiseStateIdsMap = WwiseDBMap<GroupValueKey, WwiseRefState>;
 using WwiseSwitchIdsMap = WwiseDBMap<GroupValueKey, WwiseRefSwitch>;
 using WwiseSwitchContainerArray = WwiseDBArray<WwiseRefSwitchContainer>;
 
-using WwiseMediaGlobalIdsMap = WwiseDBMap<MediaIdKey, WwiseRefMedia>;
+using WwiseMediaGlobalIdsMap = WwiseDBMap<LocalizableMediaIdKey, WwiseRefMedia>;
 using WwiseSoundBankGlobalIdsMap = WwiseDBMap<LocalizableIdKey, WwiseRefSoundBank>;
 using WwiseDialogueEventGlobalIdsMap = WwiseDBMap<LocalizableIdKey, WwiseRefDialogueEvent>;
 using WwiseDialogueArgumentGlobalIdsMap = WwiseDBMap<LocalizableIdKey, WwiseRefDialogueArgument>;

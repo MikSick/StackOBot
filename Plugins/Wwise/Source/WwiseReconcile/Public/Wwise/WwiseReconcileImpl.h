@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -28,7 +28,7 @@ protected:
 public:
 	FWwiseReconcileImpl():IWwiseReconcile(){};
 	virtual ~FWwiseReconcileImpl(){};
-	virtual FString GetAssetPackagePath(const WwiseAnyRef& WwiseRef) override;
+	virtual FString GetAssetPackagePath(const WwiseAnyRef& WwiseRef) const override;
 	virtual void GetAllAssets(TArray<FWwiseReconcileItem>& ReconcileItems) override;
 	virtual TArray<FAssetData> CreateAssets(FScopedSlowTask& SlowTask) override;
 	virtual TArray<FAssetData> UpdateExistingAssets(FScopedSlowTask& SlowTask) override;

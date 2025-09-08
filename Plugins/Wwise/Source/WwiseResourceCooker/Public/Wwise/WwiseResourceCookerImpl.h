@@ -12,7 +12,7 @@ Licensees holding valid licenses to the AUDIOKINETIC Wwise Technology may use
 this file in accordance with the end user license agreement provided with the
 software or, alternatively, in accordance with the terms contained
 in a written agreement between you and Audiokinetic Inc.
-Copyright (c) 2024 Audiokinetic Inc.
+Copyright (c) 2025 Audiokinetic Inc.
 *******************************************************************************/
 
 #pragma once
@@ -46,7 +46,7 @@ public:
 	virtual void PreCacheAssetLibraryRef(FCookedAssetLibraryFiles& OutFiles, UObject* Owner, const FWwiseAssetLibraryRef& AssetLibraryRef);
 	virtual void UpdateAssetLibraryPackagedFile(FWwisePackagedFile& File);
 	
-	virtual void PrepareAssetLibrary(UObject* Owner, FWwiseAssetLibraryCookedData& OutCookedData) override;
+	virtual void PrepareAssetLibrary(UObject* Owner, FWwiseAssetLibraryCookedData& OutCookedData, bool bPackageAssets) override;
 	virtual bool PrepareCookedData(FWwiseAcousticTextureCookedData& OutCookedData, const FWwiseObjectInfo& InInfo) override;
 	virtual bool PrepareCookedData(FWwiseAudioDeviceShareSetCookedData& OutCookedData, const FWwiseObjectInfo& InInfo) override;
 	virtual bool PrepareCookedData(FWwiseLocalizedAuxBusCookedData& OutCookedData, const UObject* Owner, const FWwiseObjectInfo& InInfo) override;
@@ -66,8 +66,8 @@ public:
 
 	virtual FWwiseProjectDatabase* GetProjectDatabase() override;
 	virtual const FWwiseProjectDatabase* GetProjectDatabase() const override;
-	virtual FWwiseResourceLoader* GetResourceLoader() override;
-	virtual const FWwiseResourceLoader* GetResourceLoader() const override;
+	virtual FWwiseResourceLoaderPtr GetResourceLoader() override;
+	virtual const FWwiseResourceLoaderPtr GetResourceLoader() const override;
 	virtual FWwiseSharedLanguageId GetCurrentLanguage() const override;
 	virtual FWwiseSharedPlatformId GetCurrentPlatform() const override;
 
