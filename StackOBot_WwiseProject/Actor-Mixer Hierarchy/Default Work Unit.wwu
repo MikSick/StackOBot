@@ -104,6 +104,7 @@
 				<ActorMixer Name="Buttons" ID="{D24F606D-613D-411F-B0B6-D9E71090E4F5}" ShortID="183673792">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -255,24 +256,21 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="Effects">
-							<Reference>
-								<Local>
-									<EffectSlot Name="" ID="{0CA0A41D-60A1-4FC1-8EC8-C1812436988C}" ShortID="338854083">
-										<ReferenceList>
-											<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-												<ObjectRef Name="New_RoomVerb" ID="{C510B2F2-23B3-4531-813E-3BA4ECDACFB8}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-											</Reference>
-										</ReferenceList>
-									</EffectSlot>
-								</Local>
-							</Reference>
-						</ObjectList>
-					</ObjectLists>
 				</ActorMixer>
 				<ActorMixer Name="Footsteps_M" ID="{0B12A487-23E6-4422-A790-8D1EDB429694}" ShortID="834715522">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Footsteps" ID="{601CD718-D543-4C94-AEC4-7993A6171BC1}" WorkUnitID="{763EA50E-FECE-4C59-A2D7-420336407407}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
 						</Reference>

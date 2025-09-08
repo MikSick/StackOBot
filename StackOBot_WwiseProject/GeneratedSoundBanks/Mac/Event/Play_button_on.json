@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{49E88F11-40D7-ECE6-C0DC-4AA9411B1768}",
+    "Hash": "{30FC9D9D-F272-A6F8-4FCF-43F78FB00364}",
     "ObjectPath": "Play_Button_on",
     "ShortName": "Play_Button_on",
     "Path": "Event/Play_Button_on.bnk",
@@ -124,6 +124,7 @@
       "Name": "Play_Button_on",
       "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Button_on",
       "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
+      "MaxAttenuation": "3000",
       "DurationType": "OneShot",
       "DurationMin": "0.622375",
       "DurationMax": "0.6856667",
@@ -192,6 +193,6 @@
     ]
    }
   ],
-  "FileHash": "{802D6FEA-034F-85C8-1119-70FAE2954727}"
+  "FileHash": "{564ECF39-168C-DE2A-D220-7D5EABBE3CCC}"
  }
 }

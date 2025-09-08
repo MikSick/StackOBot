@@ -10,11 +10,21 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{96A6DED6-4D2B-BD77-A20F-3921CA23222A}",
+    "Hash": "{846FDFB9-A935-D0C1-B528-131DFDC4E028}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "1520064353",
+       "Name": "Hall_Medium_Bright",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Halls\\Hall_Medium_Bright",
+       "GUID": "{3C3845B2-C76E-4634-9108-83FA43A5A7BC}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -54,6 +64,21 @@
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
     ],
+    "AuxBusses": [
+     {
+      "Id": "2560751177",
+      "Name": "Arena_Reverb",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Arena_Reverb",
+      "GUID": "{CD94127D-E881-4EF9-9BF1-DB7A8A6A8FB3}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1520064353"
+        }
+       ]
+      }
+     }
+    ],
     "SwitchGroups": [
      {
       "Id": "4050929301",
@@ -78,6 +103,6 @@
     ]
    }
   ],
-  "FileHash": "{AF9664B4-28CA-4BBB-3CE8-8BE8A256A758}"
+  "FileHash": "{CD4308DC-2E60-F34F-4792-9074518CB850}"
  }
 }

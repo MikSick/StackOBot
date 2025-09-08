@@ -3,7 +3,7 @@
   "Project": {
    "Name": "StackOBot_WwiseProject",
    "GUID": "{E62574E3-E4F0-4C92-9EF4-EAB257C2EBA8}",
-   "Generator": "2024.1.1.8691"
+   "Generator": "2024.1.7.8863"
   },
   "CacheRoot": "../.cache",
   "Platforms": [
@@ -31,6 +31,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{705A1CFF-45D8-4239-6D0C-3A1BC8C5A442}"
+  "FileHash": "{41828745-0F5D-BBCC-ED8D-19164D36903C}"
  }
 }

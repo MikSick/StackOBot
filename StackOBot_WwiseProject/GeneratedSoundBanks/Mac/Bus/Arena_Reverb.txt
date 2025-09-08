@@ -1,0 +1,6 @@
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2560751177	Arena_Reverb			\Default Work Unit\Master Audio Bus\Arena_Reverb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1520064353	Hall_Medium_Bright	Wwise RoomVerb			
+

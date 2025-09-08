@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{5BBF792E-0531-C7CF-1D51-5415E47C1923}",
+    "Hash": "{2A609B1C-B234-E740-8BCF-49724F0B4166}",
     "ObjectPath": "Footsteps",
     "ShortName": "Footsteps",
     "Path": "Event/Footsteps.bnk",
@@ -139,6 +139,7 @@
       "Name": "Footsteps",
       "ObjectPath": "\\Events\\Default Work Unit\\Footsteps",
       "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
+      "MaxAttenuation": "3000",
       "DurationType": "OneShot",
       "DurationMin": "0.17020833",
       "DurationMax": "0.30514583",
@@ -230,6 +231,6 @@
     ]
    }
   ],
-  "FileHash": "{F098C12D-B873-786B-C01E-C1C212A2DD05}"
+  "FileHash": "{30A0CB62-1C7B-2001-4CA9-38A7518454E3}"
  }
 }
