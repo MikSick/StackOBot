@@ -93,6 +93,12 @@
         "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
        },
        {
+        "Id": "782826392",
+        "Name": "Default",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Default",
+        "GUID": "{297662F2-996D-4611-9A9B-CD753124DB91}"
+       },
+       {
         "Id": "1216965916",
         "Name": "Stone",
         "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Stone",
@@ -103,6 +109,6 @@
     ]
    }
   ],
-  "FileHash": "{CD4308DC-2E60-F34F-4792-9074518CB850}"
+  "FileHash": "{3CC7EF71-05FE-B52E-D0CC-9C0DBBA2D0D6}"
  }
 }

@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{2A609B1C-B234-E740-8BCF-49724F0B4166}",
+    "Hash": "{0290DE3E-5E8F-4A24-6DA2-1BD8EC4B8C09}",
     "ObjectPath": "Footsteps",
     "ShortName": "Footsteps",
     "Path": "Event/Footsteps.bnk",
@@ -203,6 +203,37 @@
           "Id": "1029832407"
          }
         ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "4050929301",
+         "Id": "782826392",
+         "GUID": "{297662F2-996D-4611-9A9B-CD753124DB91}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "127986081"
+         },
+         {
+          "Id": "357705262"
+         },
+         {
+          "Id": "464355393"
+         },
+         {
+          "Id": "562553838"
+         },
+         {
+          "Id": "726171840"
+         },
+         {
+          "Id": "748953917"
+         },
+         {
+          "Id": "1029832407"
+         }
+        ]
        }
       ]
      }
@@ -221,6 +252,12 @@
         "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
        },
        {
+        "Id": "782826392",
+        "Name": "Default",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Default",
+        "GUID": "{297662F2-996D-4611-9A9B-CD753124DB91}"
+       },
+       {
         "Id": "1216965916",
         "Name": "Stone",
         "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Stone",
@@ -231,6 +268,6 @@
     ]
    }
   ],
-  "FileHash": "{30A0CB62-1C7B-2001-4CA9-38A7518454E3}"
+  "FileHash": "{18794B84-E234-7603-330C-ED43BBEDF1B8}"
  }
 }

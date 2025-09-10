@@ -658,6 +658,12 @@
 											<ItemRef Name="Footsteps_Stone" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}"/>
 										</ItemList>
 									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Default" ID="{297662F2-996D-4611-9A9B-CD753124DB91}"/>
+										<ItemList>
+											<ItemRef Name="Footsteps_Stone" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}"/>
+										</ItemList>
+									</Grouping>
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
