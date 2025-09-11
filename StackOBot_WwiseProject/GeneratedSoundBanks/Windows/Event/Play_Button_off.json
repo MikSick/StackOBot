@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{013E98A0-EB9F-4CB9-9932-4822087BE469}",
     "Language": "SFX",
-    "Hash": "{03670023-9C0C-90EC-184A-99FC537F10BF}",
+    "Hash": "{B6860B37-802B-871E-3CA2-99E4DE31579C}",
     "ObjectPath": "Play_Button_off",
     "ShortName": "Play_Button_off",
     "Path": "Event/Play_Button_off.bnk",
@@ -44,6 +44,6 @@
     ]
    }
   ],
-  "FileHash": "{A27D0AE3-66BB-B6A1-DBD3-4A2A1A2E8019}"
+  "FileHash": "{003C0601-A910-6D00-602D-F6C7DD179B45}"
  }
 }

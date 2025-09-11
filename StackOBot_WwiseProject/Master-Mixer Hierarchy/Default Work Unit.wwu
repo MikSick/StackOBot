@@ -45,6 +45,21 @@
 							</ObjectLists>
 						</AuxBus>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{C9FEC755-41A4-4553-9702-04219EA4C458}" ShortID="226683155">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+												<ObjectRef Name="Lim" ID="{1710310B-F234-4B5F-8F7A-470F7FAB3EE2}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

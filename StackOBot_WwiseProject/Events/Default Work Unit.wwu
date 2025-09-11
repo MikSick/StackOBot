@@ -14,13 +14,6 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{CC580C78-E6A8-47BB-BB72-038A47119ED8}" ShortID="351247390">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Footsteps_Stone" ID="{1A4C9213-F1F4-46C4-9FAB-F47FC33C90AD}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Button_off" ID="{013E98A0-EB9F-4CB9-9932-4822087BE469}">
@@ -29,6 +22,32 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Button_off" ID="{4262A42F-1C12-4C85-9EB1-18644CEF64DF}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Jetpack" ID="{B4A85579-34C1-4548-9349-47F4EE84C59C}">
+							<ChildrenList>
+								<Action Name="" ID="{912ACF6B-58C7-42A4-BE3D-0819A4B3A22E}" ShortID="116131797">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Jetpack" ID="{4BB796B6-49B3-444F-B7C7-E0773966B9EE}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Jetpack" ID="{651B0BD8-414F-47E4-B7DD-2FB4464A64E0}">
+							<ChildrenList>
+								<Action Name="" ID="{EAAB64AE-4447-4C1F-B2A1-AF1E8D3A354E}" ShortID="432504626">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Jetpack" ID="{4BB796B6-49B3-444F-B7C7-E0773966B9EE}" WorkUnitID="{5C5EE0FD-D78D-490D-8EB0-4EBDDB411B27}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

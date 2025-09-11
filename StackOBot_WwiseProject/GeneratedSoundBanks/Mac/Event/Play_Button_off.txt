@@ -1,6 +1,3 @@
 Event	ID	Name			Wwise Object Path	Notes
 	4095283000	Play_Button_off			\Default Work Unit\New Virtual Folder\Play_Button_off	
 
-Effect plug-ins	ID	Name	Type				Notes
-	1259256166	New_RoomVerb	Wwise RoomVerb			
-

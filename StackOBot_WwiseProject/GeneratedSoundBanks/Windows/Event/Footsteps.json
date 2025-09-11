@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{967E2799-FA00-47AA-826B-E66AD47CDF78}",
     "Language": "SFX",
-    "Hash": "{0290DE3E-5E8F-4A24-6DA2-1BD8EC4B8C09}",
+    "Hash": "{C2F2098F-E798-6207-9E5B-050E427DAEB9}",
     "ObjectPath": "Footsteps",
     "ShortName": "Footsteps",
     "Path": "Event/Footsteps.bnk",
@@ -22,16 +22,16 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_01.wav",
       "Path": "Media/83154899.wem",
-      "CachePath": "B7/{B7043AA4-D1E1-F0CD-0AD3-C9904CCB83F5}.wem"
+      "CachePath": "76/{7646384C-23C0-CE4D-E4E6-55709006D2AE}.wem"
      },
      {
-      "Id": "127986081",
+      "Id": "155698551",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_07.wav",
-      "Path": "Media/127986081.wem",
-      "CachePath": "8D/{8DD9EFC9-57F4-18C5-0263-E93EADB97A9A}.wem"
+      "ShortName": "Footsteps_Stone_03.wav",
+      "Path": "Media/155698551.wem",
+      "CachePath": "B6/{B6873C74-9A88-FE5C-7104-F4985889594F}.wem"
      },
      {
       "Id": "211796984",
@@ -40,7 +40,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_06.wav",
       "Path": "Media/211796984.wem",
-      "CachePath": "81/{815A655C-B3BD-9F04-7854-7BF72BA9B852}.wem"
+      "CachePath": "F8/{F86F5BAD-70C4-7EFD-728D-DAAC7AFC913F}.wem"
      },
      {
       "Id": "324151547",
@@ -49,7 +49,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_02.wav",
       "Path": "Media/324151547.wem",
-      "CachePath": "BA/{BAC9A375-C459-A6CE-BE4C-D95C0F4F9EC6}.wem"
+      "CachePath": "66/{66F39048-B326-9FBE-EC9D-3BC304266739}.wem"
      },
      {
       "Id": "353832452",
@@ -58,34 +58,25 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_04.wav",
       "Path": "Media/353832452.wem",
-      "CachePath": "5A/{5A68AC32-9D86-F4C8-5F7B-22A292B3AB7D}.wem"
+      "CachePath": "98/{98379202-BF4A-5F3E-9DC9-28A47CD14081}.wem"
      },
      {
-      "Id": "357705262",
+      "Id": "376949354",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_02.wav",
-      "Path": "Media/357705262.wem",
-      "CachePath": "9B/{9BC01AEB-E4E0-3599-74EB-4F436D1E6D4D}.wem"
+      "ShortName": "Footsteps_Stone_06.wav",
+      "Path": "Media/376949354.wem",
+      "CachePath": "0C/{0C712A27-4346-E6B4-A335-F77BBE5C133F}.wem"
      },
      {
-      "Id": "464355393",
+      "Id": "464156592",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_01.wav",
-      "Path": "Media/464355393.wem",
-      "CachePath": "DD/{DD0A3E08-8827-ABA0-95A7-40E0ACCFAAD3}.wem"
-     },
-     {
-      "Id": "562553838",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_04.wav",
-      "Path": "Media/562553838.wem",
-      "CachePath": "A9/{A95F2B6E-A575-31FC-3D7C-87AF94D099BE}.wem"
+      "ShortName": "Footsteps_Stone_05.wav",
+      "Path": "Media/464156592.wem",
+      "CachePath": "BB/{BB3D8DA0-2A02-3378-EFB8-F68D6A906374}.wem"
      },
      {
       "Id": "629868767",
@@ -94,7 +85,7 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_03.wav",
       "Path": "Media/629868767.wem",
-      "CachePath": "F4/{F4C17D3C-CBDF-1C19-B92B-7274C95C0394}.wem"
+      "CachePath": "F2/{F2A9A5CB-DB81-7AAE-3E37-A2461EFC1C8C}.wem"
      },
      {
       "Id": "669138820",
@@ -103,34 +94,43 @@
       "Location": "Loose",
       "ShortName": "Footsteps_Plastic_05.wav",
       "Path": "Media/669138820.wem",
-      "CachePath": "D6/{D60E2E60-1FEE-6244-797B-29C1CC4C48B2}.wem"
+      "CachePath": "20/{20073799-E47F-25EE-4FEF-179AB781CF66}.wem"
      },
      {
-      "Id": "726171840",
+      "Id": "718635778",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_03.wav",
-      "Path": "Media/726171840.wem",
-      "CachePath": "0D/{0D460CCD-6121-9DE1-AA5B-A8974D89B2AC}.wem"
+      "ShortName": "Footsteps_Stone_02.wav",
+      "Path": "Media/718635778.wem",
+      "CachePath": "89/{89501D99-48A1-E00E-A0E8-32661097821E}.wem"
      },
      {
-      "Id": "748953917",
+      "Id": "753834980",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_05.wav",
-      "Path": "Media/748953917.wem",
-      "CachePath": "48/{4819A37E-5D71-1428-8327-6D289A5DEA69}.wem"
+      "ShortName": "Footsteps_Stone_07.wav",
+      "Path": "Media/753834980.wem",
+      "CachePath": "C6/{C605394D-FC66-34BA-E5A7-23C71A1E8231}.wem"
      },
      {
-      "Id": "1029832407",
+      "Id": "794897449",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Loose",
-      "ShortName": "Footsteps_06.wav",
-      "Path": "Media/1029832407.wem",
-      "CachePath": "72/{72F902DE-5116-5D95-F8E6-2148915B4F9F}.wem"
+      "ShortName": "Footsteps_Stone_04.wav",
+      "Path": "Media/794897449.wem",
+      "CachePath": "02/{0269A6BA-0F94-E64E-D991-AD6CADCAACD6}.wem"
+     },
+     {
+      "Id": "889372015",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Footsteps_Stone_01.wav",
+      "Path": "Media/889372015.wem",
+      "CachePath": "10/{10B15D78-E39D-0CB4-07AA-0FDA9C5450A8}.wem"
      }
     ],
     "Events": [
@@ -182,25 +182,25 @@
         },
         "MediaRefs": [
          {
-          "Id": "127986081"
+          "Id": "155698551"
          },
          {
-          "Id": "357705262"
+          "Id": "376949354"
          },
          {
-          "Id": "464355393"
+          "Id": "464156592"
          },
          {
-          "Id": "562553838"
+          "Id": "718635778"
          },
          {
-          "Id": "726171840"
+          "Id": "753834980"
          },
          {
-          "Id": "748953917"
+          "Id": "794897449"
          },
          {
-          "Id": "1029832407"
+          "Id": "889372015"
          }
         ]
        },
@@ -213,25 +213,25 @@
         },
         "MediaRefs": [
          {
-          "Id": "127986081"
+          "Id": "155698551"
          },
          {
-          "Id": "357705262"
+          "Id": "376949354"
          },
          {
-          "Id": "464355393"
+          "Id": "464156592"
          },
          {
-          "Id": "562553838"
+          "Id": "718635778"
          },
          {
-          "Id": "726171840"
+          "Id": "753834980"
          },
          {
-          "Id": "748953917"
+          "Id": "794897449"
          },
          {
-          "Id": "1029832407"
+          "Id": "889372015"
          }
         ]
        }
@@ -268,6 +268,6 @@
     ]
    }
   ],
-  "FileHash": "{18794B84-E234-7603-330C-ED43BBEDF1B8}"
+  "FileHash": "{FEE71846-FB41-B1CD-7858-12A986ACEA2C}"
  }
 }

@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "202598710",
+    "Type": "Event",
+    "GUID": "{651B0BD8-414F-47E4-B7DD-2FB4464A64E0}",
+    "Language": "SFX",
+    "Hash": "{049C371B-CB01-0F41-C33C-81BFD544CF43}",
+    "ObjectPath": "Stop_Jetpack",
+    "ShortName": "Stop_Jetpack",
+    "Path": "Event/Stop_Jetpack.bnk",
+    "Events": [
+     {
+      "Id": "202598710",
+      "Name": "Stop_Jetpack",
+      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Stop_Jetpack",
+      "GUID": "{651B0BD8-414F-47E4-B7DD-2FB4464A64E0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{3358C10E-3D84-E91A-8EF9-84B307267CBF}"
+ }
+}

@@ -7,6 +7,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	2560751177	Arena_Reverb			\Default Work Unit\Master Audio Bus\Arena_Reverb	
 
 Effect plug-ins	ID	Name	Type				Notes
+	444705613	Lim	Wwise Gain			
 	1520064353	Hall_Medium_Bright	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{713D8A28-243B-41E6-90CC-FD7926449EC8}" SchemaVersion="123">
 	<Modulators>
-		<WorkUnit Name="Default Work Unit" ID="{713D8A28-243B-41E6-90CC-FD7926449EC8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{713D8A28-243B-41E6-90CC-FD7926449EC8}" PersistMode="Standalone">
+			<ChildrenList>
+				<ModulatorEnvelope Name="jetpack" ID="{D47103F0-E5D5-4E30-B517-AFBE1D746DE8}" ShortID="33276215"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Modulators>
 </WwiseDocument>

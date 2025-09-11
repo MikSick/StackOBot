@@ -10,7 +10,7 @@
     "Type": "Bus",
     "GUID": "{CD94127D-E881-4EF9-9BF1-DB7A8A6A8FB3}",
     "Language": "SFX",
-    "Hash": "{E0F1AAD0-179B-8EB7-B9E1-52D4868DE5A8}",
+    "Hash": "{0CC8E5D7-F037-9B91-CC8D-7AD76CA36CE7}",
     "ObjectPath": "Arena_Reverb",
     "ShortName": "Arena_Reverb",
     "Path": "Bus/Arena_Reverb.bnk",
@@ -43,6 +43,6 @@
     ]
    }
   ],
-  "FileHash": "{3F1C4C04-FB0C-76D3-F6FF-C35517A0A5C1}"
+  "FileHash": "{75691C99-A0CF-A146-97F3-A93D810BB840}"
  }
 }

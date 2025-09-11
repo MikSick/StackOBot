@@ -1,0 +1,58 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3678041040",
+    "Type": "Event",
+    "GUID": "{B4A85579-34C1-4548-9349-47F4EE84C59C}",
+    "Language": "SFX",
+    "Hash": "{DCFA71A2-7F4D-73E6-62A2-2D4F481EBA32}",
+    "ObjectPath": "Play_Jetpack",
+    "ShortName": "Play_Jetpack",
+    "Path": "Event/Play_Jetpack.bnk",
+    "Media": [
+     {
+      "Id": "327920412",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Jetpack_On.wav",
+      "Path": "Media/327920412.wem",
+      "CachePath": "86/{86B6EFF0-7EE4-AB5C-35E0-C7AEDBD12975}.wem"
+     },
+     {
+      "Id": "843087306",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Jetpack_Loop.wav",
+      "Path": "Media/843087306.wem",
+      "CachePath": "62/{62F84676-91B5-A9CF-8B1D-E0B0B68FC7E7}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3678041040",
+      "Name": "Play_Jetpack",
+      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Jetpack",
+      "GUID": "{B4A85579-34C1-4548-9349-47F4EE84C59C}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "327920412"
+       },
+       {
+        "Id": "843087306"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{85F029B8-1AEF-19BD-9D87-2DB0B414C32E}"
+ }
+}

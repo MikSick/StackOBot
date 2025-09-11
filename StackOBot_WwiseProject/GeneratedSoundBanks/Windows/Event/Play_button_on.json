@@ -10,20 +10,11 @@
     "Type": "Event",
     "GUID": "{039539BC-A74F-49F0-865E-8D214394B9E7}",
     "Language": "SFX",
-    "Hash": "{43B1C9B3-CEDE-E1C0-4B7D-0C4FF225166E}",
+    "Hash": "{4E764B9D-F20E-0641-2B6D-DF21B60AD332}",
     "ObjectPath": "Play_Button_on",
     "ShortName": "Play_Button_on",
     "Path": "Event/Play_Button_on.bnk",
     "Media": [
-     {
-      "Id": "127986081",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_07.wav",
-      "Path": "Media/127986081.wem",
-      "CachePath": "8D/{8DD9EFC9-57F4-18C5-0263-E93EADB97A9A}.wem"
-     },
      {
       "Id": "184594561",
       "Language": "SFX",
@@ -32,15 +23,6 @@
       "ShortName": "Button_Press_02.wav",
       "Path": "Media/184594561.wem",
       "CachePath": "61/{618F7080-7DF6-E0DB-7714-61E1ACBBDC36}.wem"
-     },
-     {
-      "Id": "357705262",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_02.wav",
-      "Path": "Media/357705262.wem",
-      "CachePath": "9B/{9BC01AEB-E4E0-3599-74EB-4F436D1E6D4D}.wem"
      },
      {
       "Id": "373568223",
@@ -52,24 +34,6 @@
       "CachePath": "55/{551ED409-ACC2-35CB-EBA7-6653F70B6908}.wem"
      },
      {
-      "Id": "464355393",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_01.wav",
-      "Path": "Media/464355393.wem",
-      "CachePath": "DD/{DD0A3E08-8827-ABA0-95A7-40E0ACCFAAD3}.wem"
-     },
-     {
-      "Id": "562553838",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_04.wav",
-      "Path": "Media/562553838.wem",
-      "CachePath": "A9/{A95F2B6E-A575-31FC-3D7C-87AF94D099BE}.wem"
-     },
-     {
       "Id": "664327915",
       "Language": "SFX",
       "Streaming": "false",
@@ -77,33 +41,6 @@
       "ShortName": "Button_Press_03.wav",
       "Path": "Media/664327915.wem",
       "CachePath": "BD/{BDD59E9C-FD2C-1C00-1C58-D7B324D37AF6}.wem"
-     },
-     {
-      "Id": "726171840",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_03.wav",
-      "Path": "Media/726171840.wem",
-      "CachePath": "0D/{0D460CCD-6121-9DE1-AA5B-A8974D89B2AC}.wem"
-     },
-     {
-      "Id": "748953917",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_05.wav",
-      "Path": "Media/748953917.wem",
-      "CachePath": "48/{4819A37E-5D71-1428-8327-6D289A5DEA69}.wem"
-     },
-     {
-      "Id": "1029832407",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Loose",
-      "ShortName": "Footsteps_06.wav",
-      "Path": "Media/1029832407.wem",
-      "CachePath": "72/{72F902DE-5116-5D95-F8E6-2148915B4F9F}.wem"
      }
     ],
     "Events": [
@@ -118,68 +55,19 @@
       "DurationMax": "0.6856667",
       "MediaRefs": [
        {
-        "Id": "127986081"
-       },
-       {
         "Id": "184594561"
-       },
-       {
-        "Id": "357705262"
        },
        {
         "Id": "373568223"
        },
        {
-        "Id": "464355393"
-       },
-       {
-        "Id": "562553838"
-       },
-       {
         "Id": "664327915"
-       },
-       {
-        "Id": "726171840"
-       },
-       {
-        "Id": "748953917"
-       },
-       {
-        "Id": "1029832407"
-       }
-      ]
-     }
-    ],
-    "SwitchGroups": [
-     {
-      "Id": "4050929301",
-      "Name": "Materials",
-      "ObjectPath": "\\Switches\\Default Work Unit\\Materials",
-      "GUID": "{C8F3BCA8-83F5-40B1-9488-BDE78E4E2C50}",
-      "Switches": [
-       {
-        "Id": "660835419",
-        "Name": "Plastic",
-        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Plastic",
-        "GUID": "{AA9EA233-EDA9-43D6-B70E-08AF8ED8C954}"
-       },
-       {
-        "Id": "782826392",
-        "Name": "Default",
-        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Default",
-        "GUID": "{297662F2-996D-4611-9A9B-CD753124DB91}"
-       },
-       {
-        "Id": "1216965916",
-        "Name": "Stone",
-        "ObjectPath": "\\Switches\\Default Work Unit\\Materials\\Stone",
-        "GUID": "{0849C533-D672-46A7-AA7C-6C6261A5B942}"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{87BE4EF6-5FDC-B83B-4A55-2C6780997088}"
+  "FileHash": "{D5125332-D43E-8F7B-7980-996745F123FA}"
  }
 }
