@@ -53,6 +53,31 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Music" ID="{C70EC055-1D30-4596-BFF3-C6E9F1C4FF69}">
+							<ChildrenList>
+								<Action Name="" ID="{4BB39340-F954-4BCF-8116-F7FABDB71681}" ShortID="735686463">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Playlist" ID="{3125B63B-8DF3-48D6-9D0C-91AFA04C313F}" WorkUnitID="{54236033-4651-4803-A2E9-253637620A05}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Music" ID="{BC1E4DE6-D7F3-4A88-B214-B4C679FF49D9}">
+							<ChildrenList>
+								<Action Name="" ID="{C56D01EA-9D87-46A8-A5CC-D94BB37E1C2E}" ShortID="421746961">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Playlist" ID="{3125B63B-8DF3-48D6-9D0C-91AFA04C313F}" WorkUnitID="{54236033-4651-4803-A2E9-253637620A05}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Event Name="Footsteps" ID="{967E2799-FA00-47AA-826B-E66AD47CDF78}">

@@ -15,7 +15,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1BA1B8AB-EABF-4218-B827-5D9B793D090A}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Ambisonic" ID="{25B3B6C8-326A-4C0C-A0DE-B441F3F7FE63}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{8B8A7C07-B2D5-495E-AE2A-60EF8E43DDDE}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

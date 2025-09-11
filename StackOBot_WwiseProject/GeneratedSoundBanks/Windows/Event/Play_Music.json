@@ -1,0 +1,190 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "2932040671",
+    "Type": "Event",
+    "GUID": "{C70EC055-1D30-4596-BFF3-C6E9F1C4FF69}",
+    "Language": "SFX",
+    "Hash": "{24907F2B-7DCC-0484-70D0-7A993714BC13}",
+    "ObjectPath": "Play_Music",
+    "ShortName": "Play_Music",
+    "Path": "Event/Play_Music.bnk",
+    "Media": [
+     {
+      "Id": "11289961",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Lid_01.wav",
+      "Path": "Media/11289961.wem",
+      "CachePath": "55/{55D4DCD3-5360-F1A6-2BFD-D8D4BD4DECAB}.wem"
+     },
+     {
+      "Id": "46258534",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Perc_01.wav",
+      "Path": "Media/46258534.wem",
+      "CachePath": "5D/{5D60836B-D07E-93B9-3D92-EA53CA856C2E}.wem"
+     },
+     {
+      "Id": "118513444",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Melody_Lid_03.wav",
+      "Path": "Media/118513444.wem",
+      "CachePath": "14/{14AD69C9-043C-4644-5910-B712AA9BB16E}.wem"
+     },
+     {
+      "Id": "122371821",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Perc_03.wav",
+      "Path": "Media/122371821.wem",
+      "CachePath": "BE/{BEAF7F25-E9D3-D93F-B430-7E836279C10C}.wem"
+     },
+     {
+      "Id": "207851699",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Melody_Lid_02.wav",
+      "Path": "Media/207851699.wem",
+      "CachePath": "07/{07BC4312-27DD-757E-F318-85BBD9923FD4}.wem"
+     },
+     {
+      "Id": "336128244",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "2Perc_04_Hat.wav",
+      "Path": "Media/336128244.wem",
+      "CachePath": "A1/{A19CE900-272F-2940-5A82-DE2B0E261A31}.wem"
+     },
+     {
+      "Id": "407066780",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Brass_03.wav",
+      "Path": "Media/407066780.wem",
+      "CachePath": "CD/{CD03D91B-4D9A-243F-7AE3-41CF52C4CD1D}.wem"
+     },
+     {
+      "Id": "438996703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Perc_02.wav",
+      "Path": "Media/438996703.wem",
+      "CachePath": "F9/{F9A34209-ADCE-93D6-DC63-FED83D4C54D2}.wem"
+     },
+     {
+      "Id": "508314539",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Brass_01.wav",
+      "Path": "Media/508314539.wem",
+      "CachePath": "AC/{ACE642EF-C00D-7F13-9E48-5CC7BE346615}.wem"
+     },
+     {
+      "Id": "740997430",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MainMelody_02.wav",
+      "Path": "Media/740997430.wem",
+      "CachePath": "0D/{0DAC008B-9487-8771-B7A8-F2F2E60F6635}.wem"
+     },
+     {
+      "Id": "837128210",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Melody_Lid_01.wav",
+      "Path": "Media/837128210.wem",
+      "CachePath": "41/{41AFACDB-ED43-8A37-D001-913648E08F11}.wem"
+     },
+     {
+      "Id": "926921711",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MainMelody_01.wav",
+      "Path": "Media/926921711.wem",
+      "CachePath": "47/{47D67068-4E9C-406C-8391-D0261229AAFF}.wem"
+     },
+     {
+      "Id": "966029621",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "MainMelody_03_Lid.wav",
+      "Path": "Media/966029621.wem",
+      "CachePath": "B9/{B9114FBD-F647-7B5A-1930-9621C999B5A4}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\New Virtual Folder\\Play_Music",
+      "GUID": "{C70EC055-1D30-4596-BFF3-C6E9F1C4FF69}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "11289961"
+       },
+       {
+        "Id": "46258534"
+       },
+       {
+        "Id": "118513444"
+       },
+       {
+        "Id": "122371821"
+       },
+       {
+        "Id": "207851699"
+       },
+       {
+        "Id": "336128244"
+       },
+       {
+        "Id": "407066780"
+       },
+       {
+        "Id": "438996703"
+       },
+       {
+        "Id": "508314539"
+       },
+       {
+        "Id": "740997430"
+       },
+       {
+        "Id": "837128210"
+       },
+       {
+        "Id": "926921711"
+       },
+       {
+        "Id": "966029621"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{91360BC4-A786-4F77-8283-F86B1A49F3EC}"
+ }
+}

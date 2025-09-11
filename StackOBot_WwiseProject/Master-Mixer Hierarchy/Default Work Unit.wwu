@@ -10,23 +10,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="New Audio Bus" ID="{D4E96E57-2EF4-4759-A0A0-ECEF6F9183BB}">
-							<ChildrenList>
-								<Bus Name="Ambisonic" ID="{25B3B6C8-326A-4C0C-A0DE-B441F3F7FE63}">
-									<PropertyList>
-										<Property Name="BusChannelConfig" Type="int32">
-											<ValueList>
-												<Value>516</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<PositioningInfo>
-										<Panner Name="" ID="{99DE56A7-21C8-4B06-9E91-540841AF109D}"/>
-										<Position Name="" ID="{D49DC6BA-D1E1-4866-A2F4-3D82C86A5AFE}"/>
-									</PositioningInfo>
-								</Bus>
-							</ChildrenList>
-						</Bus>
 						<AuxBus Name="Arena_Reverb" ID="{CD94127D-E881-4EF9-9BF1-DB7A8A6A8FB3}">
 							<ObjectLists>
 								<ObjectList Name="Effects">
@@ -44,6 +27,7 @@
 								</ObjectList>
 							</ObjectLists>
 						</AuxBus>
+						<Bus Name="New Audio Bus" ID="{3C458BBA-E4BB-4C2F-8514-A73737834CD0}"/>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="Effects">

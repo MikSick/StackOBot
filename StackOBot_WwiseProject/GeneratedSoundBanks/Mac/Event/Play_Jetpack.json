@@ -10,7 +10,7 @@
     "Type": "Event",
     "GUID": "{B4A85579-34C1-4548-9349-47F4EE84C59C}",
     "Language": "SFX",
-    "Hash": "{DCFA71A2-7F4D-73E6-62A2-2D4F481EBA32}",
+    "Hash": "{E29441C4-650A-F75D-D7EF-E85827708D8D}",
     "ObjectPath": "Play_Jetpack",
     "ShortName": "Play_Jetpack",
     "Path": "Event/Play_Jetpack.bnk",
@@ -22,7 +22,7 @@
       "Location": "Loose",
       "ShortName": "Jetpack_On.wav",
       "Path": "Media/327920412.wem",
-      "CachePath": "86/{86B6EFF0-7EE4-AB5C-35E0-C7AEDBD12975}.wem"
+      "CachePath": "64/{64BD9335-3862-2B30-CF8E-79408036065A}.wem"
      },
      {
       "Id": "843087306",
@@ -53,6 +53,6 @@
     ]
    }
   ],
-  "FileHash": "{35BA90DF-98C2-1146-CE52-348875544583}"
+  "FileHash": "{A74D0AF6-B603-07AE-26B4-092CD9B29A73}"
  }
 }
